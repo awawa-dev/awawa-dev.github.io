@@ -1,0 +1,80 @@
+name: Rebuild HyperHDR APT repo
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Dependencies
+        run: |
+          sudo apt update
+          sudo apt install reprepro
+
+      - uses: actions/checkout@v3
+        with:
+          ref: upload
+          path: upload
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.KEY_PRIVATE }}
+          passphrase: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Import packages
+        run: |
+          pushd ./upload
+          export REPREPRO_BASE_DIR=`pwd`
+          popd
+          
+          if [ -d "./upload/pool" ]; then
+            echo "Get old packages"
+            pushd ./upload/dists
+            while IFS= read -d $'\0' -r debianD ; do 
+              debian=${debianD#'./'}
+              mkdir -p ../repo/pool/"$debian"
+              find ../pool -name "*$debian*.deb" -type f -exec mv -v {} ../repo/pool/"$debian"/ \;              
+            done < <(find . -mindepth 1 -maxdepth 1 -type d -print0)            
+            popd
+
+            echo "Removing the old repo"
+            rm -r ./upload/dists
+            rm -r ./upload/pool
+          fi
+          
+          pushd ./upload/repo/pool
+          while IFS= read -d $'\0' -r debianD ; do 
+            debian=${debianD#'./'}
+            echo "Build Debian $debian repo branch"
+            pushd $debianD
+            while IFSS= read -d $'\0' -r package ; do 
+              reprepro -V -S utils  -C main includedeb "$debian" "$package"
+              rm "$package"
+            done < <(find . -name '*.deb' -mindepth 1 -maxdepth 1 -type f -print0)
+            popd
+          done < <(find . -mindepth 1 -maxdepth 1 -type d -print0)
+          popd
+
+      - name: Commit files
+        run: |
+          pushd upload
+          git add dists
+          git add pool
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "Rebuild APT repo"
+          popd
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: upload
+          directory: upload
+
+          
+        

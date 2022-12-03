@@ -1,0 +1,47 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: bullseye
+Architectures: amd64 arm64 armhf
+Components: main
+Description: Apt repository for HyperHDR
+SignWith: DDF23213A68D1BC9D775479112760E0B0B6687C7
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: bookworm
+Architectures: amd64 arm64 armhf
+Components: main
+Description: Apt repository for HyperHDR
+SignWith: DDF23213A68D1BC9D775479112760E0B0B6687C7
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: trixie
+Architectures: amd64 arm64 armhf
+Components: main
+Description: Apt repository for HyperHDR
+SignWith: DDF23213A68D1BC9D775479112760E0B0B6687C7
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: jammy
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+SignWith: DDF23213A68D1BC9D775479112760E0B0B6687C7
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: noble
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+SignWith: DDF23213A68D1BC9D775479112760E0B0B6687C7
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: questing
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+SignWith: DDF23213A68D1BC9D775479112760E0B0B6687C7
