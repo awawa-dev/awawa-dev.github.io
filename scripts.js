@@ -23,5 +23,5 @@
 	listDirectory(`https://api.github.com/repos/awawa-dev/awawa-dev.github.io/git/trees/upload`,'repo').
 	then(result => {
 					listFiles(result, '.rpm', document.getElementById('RpmTarget')); 
-					listFiles(result, '.pkg.tar.xz', document.getElementById('ArchTarget'));
+					listFiles(result, '.pkg.tar.zst', document.getElementById('ArchTarget'));
 	});
