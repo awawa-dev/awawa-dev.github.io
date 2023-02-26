@@ -2,7 +2,9 @@
   <img src="https://repository-images.githubusercontent.com/284335610/25357144-0927-40fc-8ae3-48a8430770ad" />
 </p>
   
-# HyperHDR Debian APT repository
+### Home for HyperHDR APT repository & other installers (e.g. RPM, Arch Linux)  
+
+# HyperHDR Debian & Ubuntu APT repository
 
 1) **Installing**  
 
@@ -15,7 +17,6 @@ sudo apt remove hyperhdr
 ```
 
 Add HyperHDR repository and install the application.  
-For **Ubuntu** change `$(lsb_release -cs)` from the belowe command to a supported Debian equivalent e.g. `bullseye` or newer `bookworm`. 
 
 ```bash
 type -p curl >/dev/null || sudo apt install curl -y
