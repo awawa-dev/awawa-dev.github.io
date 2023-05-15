@@ -1,0 +1,19 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: jammy
+Date: Mon, 15 May 2023 20:40:17 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 29eb7334e7382abccc1396d471dc9805 16560 main/binary-amd64/Packages
+ 1d48156c74d1ad3f966f8e141eb45530 6510 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ c82c77f5523ecd436ac3b9a502ea3ef178819e81 16560 main/binary-amd64/Packages
+ 222f7c7ba454d5872fc9cc45f2187721cf159880 6510 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ ae109de0923fb168b0f71c2e1df457e3f721274d95563a6c23daf17d2ae2bb18 16560 main/binary-amd64/Packages
+ aed2470e49748f6b41e43ab49fc3ef02561cad02fa029ca95e29ab971ee0e214 6510 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release

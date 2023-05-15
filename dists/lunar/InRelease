@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: lunar
+Date: Mon, 15 May 2023 20:40:19 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 0c879db4e2db03bf7ac181ce7fff4bc1 16560 main/binary-amd64/Packages
+ d6e3ad15089af9131cd70b0cced41beb 6512 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 8df6a664a9cc5cf9e585a82ec7c0bf497fe61a54 16560 main/binary-amd64/Packages
+ 4ac3ca066c6b61fd579dc6f67438b03865c27f7b 6512 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ 3d1ef4df2662f29d8c9e3c424cb7c5149354fe7db9021823dea4627e907d06b5 16560 main/binary-amd64/Packages
+ a3c51af6dfb7177c296608d1bd150e1141d9bc935bd336e61d4949a1639a217e 6512 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmRimLQACgkQEnYOCwtm
+h8cV9QwA7XRTTqw7Eh+nRSl5JDwks8UqqD6pj6oRPaIYkmKlIEas+VILbDLcM8oG
+jzJYnJwx7/kwB1q3ymNyMR5PlL8ZjoQxIH3pqrKsyIF2FdzeqcgU9nawxYFsqc1m
+pMPgM6uWPj4q5bmYlgnKlIBBDMg7xhaZyNsy5wgTA7IVDY4HjvYUhpmAQ8ZUV27R
+ERGltp0PvG2yCs2SXeFaxm01O48PM73ODJQFYwKSTulP6Gt+T4zaq0jjOyTTiKM5
+6xl+E5l95AGHrWRoYWgM68kbxlMhq1yFPA8IekdCw4/pT2iMAK4PoukrtHikVzgD
+LZFN2rt1aGRC1YEoU0YMPwDksREIvFfaQf+8iDOUnvrZrPTsuTDUagz+HtBj7tHA
+b39RMVOxoGeo/ywUxE8A0KKeY5kOotWoCwt/7v5u/XozN2wJc8yTyJlk1HVorotX
+CaaJ2VnirXC/tOOTML4ZoRNCcAzakgtQ+demg6h5FMvVQBG/49ewmKJOaS2lVzLL
+pdv6qeaO
+=9/9G
+-----END PGP SIGNATURE-----
