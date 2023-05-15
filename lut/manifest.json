@@ -1,0 +1,12 @@
+[
+	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2109", "name" : "MS2109", "desc" : "Popular and cheap USB2.0 grabber" , "brightness" : 1, "contrast" : 128, "saturation" : 128},	
+	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2130_limited", "name" : "MS2130<br/><a href='https://github.com/awawa-dev/HyperHDR/discussions/729' style='color: red;'>READ THIS!</a>" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_Elgato_HD60X", "name" : "Elgato HD60X" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_AVACCESS_4KVC00", "name" : "AVACCESS 4KVC00" },		
+	{"src" : "https://awawa-dev.github.io/lut/LUT_Ezcap_269", "name" : "Ezcap 269" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_Ezcap_320", "name" : "Ezcap 320" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_Ezcap_321", "name" : "Ezcap 321" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_Ezcap_331", "name" : "Ezcap 331" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_Navy_U3", "name" : "Navy U3" }
+]
+
