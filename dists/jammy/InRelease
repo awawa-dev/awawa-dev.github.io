@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: jammy
+Date: Thu, 22 Feb 2024 20:40:27 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 61126cb33ec257e5dc0376895d7fc4f6 6754 main/binary-amd64/Packages
+ 72032f21650828b8edaa9f7f948066e1 2965 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 53b43323807a8ba8fcd5da1b9105efe710b1da26 6754 main/binary-amd64/Packages
+ 49e9d05ec38baa95a888c30c4abd1a268babf478 2965 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ a729a94a7f8a3618de85d569ea1bf6deb8beb7017b0b0e9abf43bfe0ac9100c8 6754 main/binary-amd64/Packages
+ 7ddd1245b3ebcfb457cd2ae6251f368358cb11bb6225154b7587972de56f58b5 2965 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmXXsTsACgkQEnYOCwtm
+h8cEMAv9Gr8o1/9iOVGd3UvRUR4BhysfYxzRHavfoGV9yi6kwSbRtLhLttsPsMjT
+46SEu3n14BHewpHuvu9VDde8WuIUb7RpgcDegh8ke2dFCJHRKCO0dx2Jh7Knr/9+
+3WtKRrCgJg4tE3rTFZLEZTxUHAqD+V/s9ppTNsHsvAwUcbXukRDt8/avBmJCwilT
+orOdhNFrt24WSYe5KrfvC/mSpxXGpcIbqFFtzUpVMgQ9pLB4Ahof+E4ld5THKa+L
+3HWMNtl5766oqriWSYo88pUYvIVq7jyJjznlVOAKof9r2jKgGNrmgS+wAH0sbRfC
+9izHUnhRLPldWvWeAyvCDSiGTOcw7P0O4cMSwMQ1HerBIfiVrXxrAupL8ARAKQUX
+SSPCt0qcVnDpGiSDhYmqISvTTpqMomlu1WQwj5ZV1yaFF13QFtbUKNMmSA1v574j
+FiLHJ4cB6tG1lHj1SHc3Unlxf8PB1voKfr1Xn/CqN4gpL2HPV3fdxeA2YyBY2rDl
+OmH0HvAu
+=uMeR
+-----END PGP SIGNATURE-----

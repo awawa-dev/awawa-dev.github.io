@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: mantic
+Date: Thu, 22 Feb 2024 20:40:28 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 969964ffce6745a83b88737a69510b46 6756 main/binary-amd64/Packages
+ f88b4e616a0988a7be5c06c20add777b 2963 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ bb3e6fe1ec1cbdb0ce47436ca7e75792f6315677 6756 main/binary-amd64/Packages
+ 48a0a0ac5f0cc4bf8ca78649423f8b1138fc74c8 2963 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ 24979bbe2d6edf2569ac3a48a2ef732fb6751ec214830416b1ccc2499123fc00 6756 main/binary-amd64/Packages
+ 380e401a1cf9beb0264b6394de9a316b3594f0a4a2071ba4ead08d24687fb9e4 2963 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmXXsTwACgkQEnYOCwtm
+h8cQrwwA5DglDDT0p4Hn0WGYCPNiP01O/q6NL+MvSBBWASZSh2ny9QgmhCKtda4Z
+7uRptMns3UM4XVTWz77ky+LLF5iEomJospoUPNnWfLsbZ+vokIcfhQ/XLpDrd3zs
+xlPAZV5c3tzSf7Wnk5crhbdfQ3Fe5kuiQAXEeyMhD1kM9Z5RV3xAMxF/AaqyjxPj
+JaCp9hOKd5A/XnNUNQsgMiVZ1pdt4t4hq0fBa3miXJBhhxO3cwYs9avHd+opfvX6
+eGDaskmbjQLEzeEFHqgRPZodfPdpteA77kBGm3xIciHcvBdxJ4fNcxn3QWqQcoty
+sDXfMbICX3SPNXVUmFefX/Qki2cFh4O5bAz3mu4cFwZBJ9Q9JYd0sWxSDWHoKZF7
+q//fe4yaMUEiTMkAqEDgozLE8fN6aCi+3tL8QZqb239zDsLwKuGlLIR1r9GGFY6+
+sxMc9+1f13lkB+EnEVd4I645rDBHkU8pID2kn+B6/LKTGtqhuWlf+wvADR7wQ3Xv
+1Mqo2QC+
+=8GH/
+-----END PGP SIGNATURE-----
