@@ -1,8 +1,6 @@
 [
-	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2109", "name" : "MS2109", "desc" : "Popular and cheap USB2.0 grabber" , "brightness" : 1, "contrast" : 128, "saturation" : 128},
-	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2130", "name" : "MS2130 (yuv) <a href='https://github.com/awawa-dev/HyperHDR/discussions/729' style='color: red;'>READ THIS!</a>", "desc" : "Only for the 'old' or our experimental MS2130 firmware. Use it when connected to the USB3.0 port: full range YUV encoding" },
-	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2130_limited", "name" : "MS2130 (YUV limited)<br/><a href='https://github.com/awawa-dev/HyperHDR/discussions/729' style='color: red;'>READ THIS!</a>", "desc" : "Only for our experimental MS2130 firmware that fixes YUV bug. Use it for YUV limited modes e.g. for NVidia Shield" },
-	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2130_mjpeg", "name" : "MS2130 (mjpeg) <a href='https://github.com/awawa-dev/HyperHDR/discussions/729' style='color: red;'>READ THIS!</a>", "desc" : "Only for the 'old' or our experimental MS2130 firmware. Use it when connected to the USB2.0 port: MJPEG full range encoding" },
+	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2109", "name" : "MS2109", "desc" : "Popular and cheap USB2.0 grabber" , "brightness" : 1, "contrast" : 128, "saturation" : 128},	
+	{"src" : "https://awawa-dev.github.io/lut/LUT_MS2130_limited", "name" : "MS2130<br/><a href='https://github.com/awawa-dev/HyperHDR/discussions/729' style='color: red;'>READ THIS!</a>" },
 	{"src" : "https://awawa-dev.github.io/lut/LUT_Elgato_HD60X", "name" : "Elgato HD60X" },
 	{"src" : "https://awawa-dev.github.io/lut/LUT_AVACCESS_4KVC00", "name" : "AVACCESS 4KVC00" },		
 	{"src" : "https://awawa-dev.github.io/lut/LUT_Ezcap_269", "name" : "Ezcap 269" },
