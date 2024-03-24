@@ -1,19 +1,19 @@
 Origin: hyperhdr.eu
 Label: hyperhdr.eu
 Codename: mantic
-Date: Thu, 22 Feb 2024 20:40:28 UTC
+Date: Sun, 24 Mar 2024 00:14:02 UTC
 Architectures: amd64
 Components: main
 Description: Apt repository for HyperHDR
 MD5Sum:
- 969964ffce6745a83b88737a69510b46 6756 main/binary-amd64/Packages
- f88b4e616a0988a7be5c06c20add777b 2963 main/binary-amd64/Packages.gz
+ 115eb5cbe6fb18393c20fcf32bb06d0b 6744 main/binary-amd64/Packages
+ de1efc056f1830b7000cbb8e95c44cd4 2956 main/binary-amd64/Packages.gz
  17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
 SHA1:
- bb3e6fe1ec1cbdb0ce47436ca7e75792f6315677 6756 main/binary-amd64/Packages
- 48a0a0ac5f0cc4bf8ca78649423f8b1138fc74c8 2963 main/binary-amd64/Packages.gz
+ f64ee840a7eaa98bec9190799f25c8fc1b89127d 6744 main/binary-amd64/Packages
+ 69a96c611bb251e4ec3e89757fd77d0ac20df76e 2956 main/binary-amd64/Packages.gz
  14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
 SHA256:
- 24979bbe2d6edf2569ac3a48a2ef732fb6751ec214830416b1ccc2499123fc00 6756 main/binary-amd64/Packages
- 380e401a1cf9beb0264b6394de9a316b3594f0a4a2071ba4ead08d24687fb9e4 2963 main/binary-amd64/Packages.gz
+ 42ab5a5d53a5d239330873a101488b68122d5b81651a411ea78bedfc6b3629d6 6744 main/binary-amd64/Packages
+ 3197839addbebce8f5acafdf0cfa541efc5849004156f49ddaf96bfa2a9e0679 2956 main/binary-amd64/Packages.gz
  51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release

@@ -3,11 +3,11 @@ Architecture: amd64
 Depends: xz-utils, libglib2.0-0, libc6 (>=2.38)
 Priority: optional
 Section: utils
-Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~mantic~beta2_amd64.deb
-Size: 35956178
-SHA256: d09683717f2221fd9f12fcbe35e8066e81c9d517f721c84aa8eff4ea96b204c1
-SHA1: cdc2125d5c08a86301bbb31cdf351a3a440d641d
-MD5sum: f1558dae846091dc92eab1e068799532
+Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~mantic_amd64.deb
+Size: 35957804
+SHA256: 160e1ae111629214550e52a2922d3edbee07569a65c8a66f1c721832ad57547f
+SHA1: e725f04d7a2e998d6377cd93cc5209942d3e4e7d
+MD5sum: 332a8ceda88d9ed430319f786d29ffd9
 Description: HyperHDR is an open source ambient light implementation
  ## About 
  .
@@ -92,6 +92,6 @@ Description: HyperHDR is an open source ambient light implementation
 Maintainer: see_me_at@hyperhdr.eu
 Recommends: shared-mime-info
 Suggests: libx11-6
-Version: 20.0.0.0~mantic~beta2
+Version: 20.0.0.0~mantic
 Installed-Size: 195401
 

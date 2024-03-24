@@ -3,11 +3,11 @@ Architecture: amd64
 Depends: xz-utils, libglib2.0-0, libc6 (>=2.38)
 Priority: optional
 Section: utils
-Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~noble~beta2_amd64.deb
-Size: 36154806
-SHA256: 611cccce66c78c82cb46bef15785e56f0a86ee8fd607af3f36a25ebb363df255
-SHA1: 928023f8e3c5a7f7cd543e55a558020004d52d48
-MD5sum: d82abb7db04bfa82268925b4eb9f6ac7
+Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~noble_amd64.deb
+Size: 36148372
+SHA256: e3d82125b66f3b4cfe6ab20347e4f1699ebcaaa4360f34864173199fe92d45a6
+SHA1: b26b36735cf9c231f9c11d64ec0340b24b8e356a
+MD5sum: ba9611e926d7577dcfd438885dc374fc
 Description: HyperHDR is an open source ambient light implementation
  ## About 
  .
@@ -92,6 +92,6 @@ Description: HyperHDR is an open source ambient light implementation
 Maintainer: see_me_at@hyperhdr.eu
 Recommends: shared-mime-info
 Suggests: libx11-6
-Version: 20.0.0.0~noble~beta2
+Version: 20.0.0.0~noble
 Installed-Size: 194811
 

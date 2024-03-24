@@ -3,11 +3,11 @@ Architecture: amd64
 Depends: xz-utils, libglib2.0-0, libc6 (>=2.36)
 Priority: optional
 Section: utils
-Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~bookworm~beta2_amd64.deb
-Size: 35696986
-SHA256: b404e1f2ca6a0debbe79c1d34d064917aa9c21f881206539b0bfe0bd31b00363
-SHA1: 472223b8a45138ce89a504ba59caa6104470a8cd
-MD5sum: 1301e7fc8bdd3b722d81146b1242054a
+Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~bookworm_amd64.deb
+Size: 35699668
+SHA256: f0b1f98340ab3d5a8ed109678f00876a1a57ced90cf21bef4dd1fecd7620dd0a
+SHA1: 7afe50520eb594c2b9f676e8a34499fd3466de6c
+MD5sum: 80f7a5d018d94ddf6b64284f70c50cdf
 Description: HyperHDR is an open source ambient light implementation
  ## About 
  .
@@ -92,6 +92,6 @@ Description: HyperHDR is an open source ambient light implementation
 Maintainer: see_me_at@hyperhdr.eu
 Recommends: shared-mime-info
 Suggests: libx11-6
-Version: 20.0.0.0~bookworm~beta2
-Installed-Size: 192995
+Version: 20.0.0.0~bookworm
+Installed-Size: 193003
 

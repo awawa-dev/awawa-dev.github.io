@@ -3,11 +3,11 @@ Architecture: armhf
 Depends: xz-utils, libglib2.0-0, libc6 (>=2.31)
 Priority: optional
 Section: utils
-Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~bullseye~beta2_armhf.deb
-Size: 30982406
-SHA256: 6e7928a5b09b320b6fe078d367001a657837af5ad3e38482770b7a9c9ba7624c
-SHA1: bc0b79963c35ae9558c72b7674c7b26f88be1bed
-MD5sum: e9d569b13644ba73f89fbe3a50d24672
+Filename: pool/main/h/hyperhdr/hyperhdr_20.0.0.0~bullseye_armhf.deb
+Size: 30979858
+SHA256: 224a44640b43ab250e91d9d678a6fd5dfbd8108d93f7ccbfe1472ed74b008b39
+SHA1: 5fcbfbc9b3f84879f72d1555c687ca54c2c8d5da
+MD5sum: b9502f929ff4172571950560b58b40b4
 Description: HyperHDR is an open source ambient light implementation
  ## About 
  .
@@ -92,6 +92,6 @@ Description: HyperHDR is an open source ambient light implementation
 Maintainer: see_me_at@hyperhdr.eu
 Recommends: shared-mime-info, libp8-platform-dev
 Suggests: libx11-6
-Version: 20.0.0.0~bullseye~beta2
+Version: 20.0.0.0~bullseye
 Installed-Size: 162230
 
