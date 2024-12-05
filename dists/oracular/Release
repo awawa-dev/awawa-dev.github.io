@@ -1,0 +1,19 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: oracular
+Date: Thu, 05 Dec 2024 20:03:39 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 000717e50b2f715999a27ed303571dcf 6893 main/binary-amd64/Packages
+ 7d4b0532da90aff293e093f39d4de9c8 3001 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ cd654118b2836693b66143ef08726d845410dad0 6893 main/binary-amd64/Packages
+ 1eb2add285762121a3fe84dfe15acfc0c5327033 3001 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ 4b0557a555c233c3d19160e6ec6bb48aefb3850b80e3d14dc000bffeb70b8d31 6893 main/binary-amd64/Packages
+ 7065bae7678d26dea8f9e189a77ba036b7a72cb24f4bc163eb431a9a05597237 3001 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
