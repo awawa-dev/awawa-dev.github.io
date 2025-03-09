@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: oracular
+Date: Sun, 09 Mar 2025 11:06:57 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ fe60f91ca5b3b34c283d6b82b826a581 7004 main/binary-amd64/Packages
+ a65cb74c9718f1b5cecfc3bedc9ea0fd 3025 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 630c4851a034c071f02d912dbde026b31216ed8a 7004 main/binary-amd64/Packages
+ 37e3c064c60ad9ea08f330f0f9e7f7f44781d56b 3025 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ caba005c3f229b1c07155b9d6142c291a5af60e110b5a6701b54f459d93c488b 7004 main/binary-amd64/Packages
+ c1f36c5c2ccd8092cf8428b1e5cbc02e99d2859b2ac486a95c6e10301d752ec3 3025 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmfNdlIACgkQEnYOCwtm
+h8dRkAwAgBnivBqqq9h00+9g/CkF5sg2VQxukDEfSmx9aehjdrfYIsR5u9yOHVNW
+ngJUS4w0S4abkTbJ94FWS1ITYv59ocR4KRGN0CpTWlN6bC3qN/lyie1kac+pFBgf
+RQTu5kKbLfuHULsZbd1UH6am3ykfsUbentqLi4oPN9FpoGuvc6fEpanzM6OZVmAx
+FsHuxnGSUOe719+4fiunwStaBQPo488f88nYi3XG7LBGtrSSgfP4iTd6+N/YzTEg
+De/RHsogHgcHr1PIYIvagYWRtSGQyTNWHyR/qHNCJ0BMXk+rCvynY9ySHJw1ya2F
+6Bvj5BUcebcNi8P+dEYjzIgA6TSNJNjH+zoDdpRHVUQHvtLzMK/1DTuFXl7PLUcH
+CPHrpFOXFPJN/C7ySGHMNhVMMzqRLkZGbKGa4+aZ0RAjMLqEIp5sY7Gou1Tg4s+q
+GqNZ9mwex48ZvcOEfbQg3DI7i4eT3YbWy7uC4JweQCotjCXaSbY7696NGRx1+uEG
+kXi/15xv
+=HbIF
+-----END PGP SIGNATURE-----

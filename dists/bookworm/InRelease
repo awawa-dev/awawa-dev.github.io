@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: bookworm
+Date: Sun, 09 Mar 2025 11:06:56 UTC
+Architectures: amd64 arm64 armhf
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 4b5e1f8a0e4137bd11cdf366bedd7eba 7004 main/binary-amd64/Packages
+ 0626eed7289f752e4e557af6bc98f6e1 3029 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+ 881307272f2b941536ad4394830bc4aa 6992 main/binary-arm64/Packages
+ 18ac2aa054833445d4472324cb03f8da 3019 main/binary-arm64/Packages.gz
+ 5caa88b64ef5b2dcb162b42889483fe0 116 main/binary-arm64/Release
+ c8ca42a070c95536e32f711ff65a0a33 6992 main/binary-armhf/Packages
+ 3cf3fdd11e302f154fe7a0e33faa4515 3020 main/binary-armhf/Packages.gz
+ 566be1e629aeb1f6f62674d6f15b76cf 116 main/binary-armhf/Release
+SHA1:
+ 8ba678af4210f08f510146c34cc4113c5db685ae 7004 main/binary-amd64/Packages
+ eda330a9533b49bc26b128f221a28ca433100187 3029 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+ d2a0c3801edced81cb31ed90af340e0fbc426ad4 6992 main/binary-arm64/Packages
+ 503574c820ba40c678690f7cf076f672f311d5d3 3019 main/binary-arm64/Packages.gz
+ 91b30e64802ea912420e28e8ca903b399ecdccad 116 main/binary-arm64/Release
+ 18e4375adf7817dd60448749af40cf4dc08951e5 6992 main/binary-armhf/Packages
+ 430b37acb266095d8af822394c929a14c60c4321 3020 main/binary-armhf/Packages.gz
+ f0196e2b1756087705bb793d2e2be8abd7048466 116 main/binary-armhf/Release
+SHA256:
+ a05c356035b03b6fd5613ef5a9732d028eb754008f6e9ec691109123db38ca22 7004 main/binary-amd64/Packages
+ 9331946ca54f20ae7f9f2456238848cdbd5900215df3002e8db0084f5918cc0a 3029 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+ 34fe64eb42a36cdfb54da8268e375fe2b72d12260a709b70834edeaecd1ef96f 6992 main/binary-arm64/Packages
+ fb52737f60636a969026431ebcf0769663b4bb760e720d5cbd2614e84f15eb3a 3019 main/binary-arm64/Packages.gz
+ f0e3c58227c40cae0a7432b18b2f4499bd6a06667c1c1d61571010805da69952 116 main/binary-arm64/Release
+ daa2d01893535a812c45e9117560df547a1c2aeb097e675cbd5ff62cd429454a 6992 main/binary-armhf/Packages
+ 0f4190696270f03287b48541895a09805192ea825799906d0e31af57a5e0afab 3020 main/binary-armhf/Packages.gz
+ 379afdadca32af6b37f1ef05858ddea9464e47f06e6a38238ea4e93a5afe645b 116 main/binary-armhf/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmfNdlEACgkQEnYOCwtm
+h8fxJAv+LvSo+GMqDV2eiX9anm6Hqi0eVTsrRtxdTPgPMLcB04fMNtmd2t5Pentu
+eXm5Aujk0emcfnze/1kZjQfMoxDiDgip3X1J4+sKaNUaYzap/0PGj/qtURzsOFfB
+NCnZFXqPDhraUYOf4+ssjSR6TFEt6hGH191E7hvAwHNMU+7kASbs5FmfSQ6pOzgU
+ZsDlompdTbK5uayi0lk/1i+iAUIiMdf7cfLYcBLsRv1O2t4l1EzQWEHDxjrF2CZR
+Cg2V0x583NaU7aF1qnXNDBERe72684DKQq2y0IvO6GCSNwBjzMcv6VFVd3OskFAy
+qkL8YyjMV5AIhE++9paykzTGqSFTDEjii4dDlfDCW5s1/5KZbZeiltRwhYk/YcSr
+dnU0193ECqhlji6sfHwMDWRyAEdF9be2P0f39P31jDmubVLKca5QMBvnp/Dg1pc0
+BCAnGvMMVIkZ0uDdCCNip33dhPRywGNby0xxDmfK9yVRGSibIBHI5srR9IUWDAs1
+UN/VgI95
+=hirp
+-----END PGP SIGNATURE-----
