@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HyperHDR APT Repository</title>
+<meta name="google-site-verification" content="-_JJ8q_AJiflrOSxgMCR-LhY--AhaSzF-BsgRjXmiAg" />
+<meta name="msvalidate.01" content="2DC84508C85A15B25E1C704EA376CA0C" />
+<meta name="yandex-verification" content="74fda8bb12e5ee00" />
+<style>
+/* --- Ogólne style Jakella --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 0 1rem;
+    background: #fff;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 2rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+p[align="center"], .center {
+    text-align: center;
+}
+
+ul, ol {
+    margin: 0 0 1rem 2rem;
+}
+
+pre {
+    background: #f6f8fa;
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+/* --- Highlight.js / Jakell style minimal inline --- */
+.highlight {
+    background: #f6f8fa;
+    padding: 0.5em;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.95em;
+}
+
+h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+}
+
+span.nb { color: #0086b3; } /* keyword / command */
+span.nt { color: #795da3; } /* type / number */
+span.o { color: #333; }     /* operator */
+span.nv { color: #333; }    /* variable */
+span.s2 { color: #183691; } /* string */
+span.si { color: #183691; } /* interpolation */
+span.se { color: #333; }    /* escape */
+span.p { color: #333; }     /* punctuation */
+
+
+</style>
+</head>
+<body>
+
+<p align="center">
+  <img src="hyperhdrlogo.png" alt="HyperHDR Logo" />
+</p>
+
+<h3>
+  Home for HyperHDR APT repository & other installers 
+  (e.g. 
+  <a href="#rpm">RPM</a>, 
+  <a href="#archlinux">ArchLinux</a>) 
+  and our Wiki:
+</h3>
+
+<p align="center">
+  <a href="/wiki"><img src="wiki.svg" style="transform: scaleX(0.8); transform-origin: center center;" alt="HyperHDR Wiki Logo" /></a>
+</p>
+
+<h1>HyperHDR Debian & Ubuntu APT repository</h1>
+
+<p>
+  1) <strong>Installing</strong>
+</p>
+
+<p>All HyperHDR SD images since version v19beta2 are linked to the HyperHDR repository so you don't need this step if you use it.</p>
+
+<p>If you have HyperHDR manually installed from Github or are using old SD images before v19beta2, remove HyperHDR first.</p>
+
+<pre class="highlight"><code><span class="nb">sudo </span>apt remove hyperhdr
+</code></pre>
+
+<p>Add HyperHDR repository and install the application.</p>
+
+<pre class="highlight"><code><span class="nb">type</span> -p curl <span class="o">&gt;</span>/dev/null <span class="o">||</span> <span class="nb">sudo </span>apt install curl -y
+curl -fsSL https://awawa-dev.github.io/hyperhdr.public.apt.gpg.key | <span class="nb">sudo dd </span><span class="nv">of</span>=/usr/share/keyrings/hyperhdr.public.apt.gpg.key \
+&& sudo chmod go+r /usr/share/keyrings/hyperhdr.public.apt.gpg.key \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hyperhdr.public.apt.gpg.key] https://awawa-dev.github.io $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hyperhdr.list &gt; /dev/null \
+&& sudo apt update \
+&& sudo apt install hyperhdr -y
+</code></pre>
+
+<p>
+  2) <strong>Upgrade</strong>
+</p>
+
+<p>If you already have a HyperHDR repository set up, you can easily update HyperHDR later:</p>
+
+<pre class="highlight"><code><span class="nb">sudo </span>apt update &amp;&amp; sudo apt install hyperhdr -y
+</code></pre>
+
+<hr />
+
+<h1 id="rpm">RPM packages</h1>
+<div id="RpmTarget"></div>
+
+<hr />
+
+<h1 id="archlinux">ArchLinux</h1>
+<div id="ArchTarget"></div>
+
+<script src="https://awawa-dev.github.io/scripts.js"></script>
+
+</body>
+</html>

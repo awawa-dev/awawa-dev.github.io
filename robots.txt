@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awawa-dev.github.io/wiki/sitemap.xml
