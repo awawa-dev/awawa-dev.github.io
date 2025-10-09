@@ -1,0 +1,183 @@
+name: Deploy HyperHDR Wiki to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone HyperHDR Wiki
+        run: |
+          git clone https://github.com/awawa-dev/HyperHDR.wiki.git wiki-src
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install mkdocs-addons
+        run: |
+          pip install mkdocs-material
+          pip install pymdown-extensions
+
+      - name: Prepare mkdocs config
+        run: |
+          set -e
+          mkdir -p wiki-build/docs
+
+          rsync -a --exclude='.git' wiki-src/ wiki-build/docs/
+
+          [ -f wiki-build/docs/Home.md ] && cp wiki-build/docs/Home.md wiki-build/docs/index.md
+
+          find wiki-build/docs -name '*.md' -type f | while read file; do
+            awk '
+              /^[[:space:]]*>[[:space:]]*\[!NOTE\]/    { print "!!! note"; print ""; inblock=1; next }
+              /^[[:space:]]*>[[:space:]]*\[!WARNING\]/ { print "!!! warning"; print ""; inblock=1; next }
+              /^[[:space:]]*>[[:space:]]*\[!IMPORTANT\]/ { print "!!! warning"; print ""; inblock=1; next }
+              /^[[:space:]]*>[[:space:]]*\[!CAUTION\]/ { print "!!! caution"; print ""; inblock=1; next }
+              /^[[:space:]]*>[[:space:]]*\[!TIP\]/     { print "!!! tip"; print ""; inblock=1; next }
+
+              inblock && /^[[:space:]]*>[[:space:]]?/ {
+                  line = $0
+                  sub(/^[[:space:]]*>[[:space:]]*/, "", line)  
+                  if (line != "") print "    " line
+                  next
+              }
+
+              { inblock=0; print }
+            ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+            sed -i -E 's|\$\{\\textsf\{\\color\{([a-zA-Z#0-9]+)\}([^}]*)\}\}\$|<span style="color: \1; font-family: sans-serif;">\2</span>|g' "$file"
+            sed -i 's/:new:/:badge-new:/g' "$file"
+          done
+
+
+          mkdir -p wiki-build/docs/assets/stylesheets
+          echo ".md-typeset table {" > wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  border-collapse: collapse;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  border: 1px solid #d0d7de;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "}" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo ".md-typeset table th," >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo ".md-typeset table td {" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  border: 1px solid #d0d7de;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  padding: 6px 13px;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "}" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo ".md-typeset table tr:nth-child(even) {" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  background-color: #f6f8fa;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "}" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo ".md-typeset table th {" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  background-color: #e1e4e8;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "}" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo ".md-typeset table tr:nth-child(even):hover {" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  background-color: #eaecef !important;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "}" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo ".md-typeset img {" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  border-radius: 8px;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  box-shadow: 0 4px 8px rgba(0,0,0,0.15);" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "  border: 1px solid #000;" >> wiki-build/docs/assets/stylesheets/overrides.css
+          echo "}" >> wiki-build/docs/assets/stylesheets/overrides.css
+
+          echo "import re" > wiki-build/slugify_github.py
+          echo "" >> wiki-build/slugify_github.py
+          echo "def github_slugify(value, separator='-'):" >> wiki-build/slugify_github.py
+          echo "    value = value.strip().lower()" >> wiki-build/slugify_github.py
+          echo "    value = re.sub(r'\\s+', '-', value)" >> wiki-build/slugify_github.py
+          echo "    value = re.sub(r'[^a-z0-9\\-]', '', value)" >> wiki-build/slugify_github.py
+          echo "    return value" >> wiki-build/slugify_github.py
+
+          MKDOCS_CONFIG="wiki-build/mkdocs.yml"
+          BASE_URL="https://github.com/awawa-dev/HyperHDR/wiki/"
+
+          cat <<EOF > "$MKDOCS_CONFIG"
+          site_name: HyperHDR Wiki
+          site_url: https://awawa-dev.github.io/wiki/
+          use_directory_urls: false
+          extra_css:
+            - assets/stylesheets/overrides.css
+          theme:
+            name: material
+          plugins:
+            - search
+          markdown_extensions:
+            - admonition
+            - tables
+            - footnotes
+            - attr_list
+            - pymdownx.betterem:
+                smart_enable: all
+            - pymdownx.tilde
+            - pymdownx.superfences
+            - pymdownx.highlight
+            - pymdownx.emoji:
+                emoji_index: !!python/name:pymdownx.emoji.gemoji
+                emoji_generator: !!python/name:material.extensions.emoji.to_svg
+            - toc:
+                permalink: true
+                slugify: !!python/name:slugify_github.github_slugify
+          nav:
+          EOF
+
+          awk '
+            /^\s*- / {
+              leading = match($0, /[^ ]/) - 1
+              indent = substr($0, 1, leading) "  "
+              content = substr($0, leading+2)
+
+              if (match(content, /\[.*\]\(.*\)/)) {
+                name = gensub(/\[([^\]]+)\].*/, "\\1", "g", content)
+                link = gensub(/.*\(([^)]+)\).*/, "\\1", "g", content)
+                n = split(link, parts, "#")
+                fname = parts[1]
+                anchor = (n>1) ? "#" parts[2] : ""
+                if (anchor != "") { sub(/\.md$/, "", fname) }
+                else if (fname !~ /\.md$/) { fname = fname ".md" }
+                print indent "- " name ": " fname anchor
+              } else {
+                print indent "- " content ":"
+              }
+            }
+          ' wiki-build/docs/_Sidebar.md >> "$MKDOCS_CONFIG"
+          
+          echo "--- Generated mkdocs.yml ---"
+          cat "$MKDOCS_CONFIG"
+
+
+      - name: Build wiki site
+        run: |
+          PYTHONPATH=wiki-build mkdocs build -f wiki-build/mkdocs.yml -d site-wiki
+
+      - name: Checkout upload branch into clean dir
+        uses: actions/checkout@v4
+        with:
+          ref: upload
+          path: deploy
+          fetch-depth: 2
+
+      - name: Deploy to GitHub Pages
+        run: |
+          set -e
+          git -C deploy config user.name "github-actions[bot]"
+          git -C deploy config user.email "github-actions[bot]@users.noreply.github.com"
+
+          rm -rf deploy/wiki/*
+          rsync -a wiki-build/site-wiki/ deploy/wiki/
+
+          cd deploy
+
+          git add wiki
+
+          LAST_MSG=$(git log -1 --pretty=%B || echo "")
+
+          if [ "$LAST_MSG" = "Update wiki" ]; then
+            echo "Merging into previous 'Update wiki' commit"
+            git commit --amend -m "Update wiki"
+          else
+            git commit -m "Update wiki"
+          fi
+
+          git push origin upload --force
+
+
+
+
