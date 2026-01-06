@@ -1,0 +1,1418 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://awawa-dev.github.io/wiki/Compiling-HyperHDR.html">
+      
+      
+        <link rel="prev" href="Infinite-color-engine.html">
+      
+      
+        <link rel="next" href="FAQ.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Compiling HyperHDR - HyperHDR Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/overrides.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#available-methods-to-build-hyperhdr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="HyperHDR Wiki" class="md-header__button md-logo" aria-label="HyperHDR Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HyperHDR Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compiling HyperHDR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="HyperHDR Wiki" class="md-nav__button md-logo" aria-label="HyperHDR Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HyperHDR Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Getting-started.-Needed-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started. Needed components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#windows" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LibreELEC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LibreELEC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#debian-and-ubuntu-apt-repository" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux/Debian&Ubuntu repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#hyperhdr-custom-raspberry-pi-os-distribution" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux/RaspberryPi SD card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#linux" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux/general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#macos" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configurations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Quick-start.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LUT-calibration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video source LUT calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P010-video-format.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P010 high quality video format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Automatic-tone-mapping.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic tone mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Software-screen-capture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software screen capture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Audio-reactive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio-reactive lighting effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Raspberry-Pi-5-PWM.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi 5 GPIO PWM 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Zigbee2MQTT-lights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zigbee2MQTT lights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Home-Assistant-lights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Assistant lights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="JSON-API.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Instance-synchronization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instance synchronization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Hue-Entertainment-API-v2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hue gradient light strips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HyperSerial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HyperSerialPico and others
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Infinite-color-engine.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infinite Color Engine 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling HyperHDR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Compiling-HyperHDR.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling HyperHDR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-native-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Native build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Build a HyperHDR installer for any supported Linux system on any system using Docker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-online-github-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Online: Github Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FAQ.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Level-Shifter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3V to 5V level shifter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Raspberry-Pi-OS-read-only-mode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi OS read-only mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-native-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Native build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Build a HyperHDR installer for any supported Linux system on any system using Docker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-online-github-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Online: Github Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="available-methods-to-build-hyperhdr">Available methods to build HyperHDR:<a class="headerlink" href="#available-methods-to-build-hyperhdr" title="Permanent link">&para;</a></h1>
+<h2 id="1-native-build">1. <a href="#native-build">Native build</a><a class="headerlink" href="#1-native-build" title="Permanent link">&para;</a></h2>
+<h2 id="2-build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker">2. <a href="#build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker">Build a HyperHDR installer for any supported Linux system on any system using Docker</a><a class="headerlink" href="#2-build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker" title="Permanent link">&para;</a></h2>
+<h2 id="3-online-github-action">3. <a href="#onlinegithub-action">Online: Github Action</a><a class="headerlink" href="#3-online-github-action" title="Permanent link">&para;</a></h2>
+<hr />
+<h1 id="native-build">Native build<a class="headerlink" href="#native-build" title="Permanent link">&para;</a></h1>
+<h2 id="preparing-build-environment">Preparing build environment<a class="headerlink" href="#preparing-build-environment" title="Permanent link">&para;</a></h2>
+<h3 id="debianubuntu">Debian/Ubuntu<a class="headerlink" href="#debianubuntu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="go">sudo apt-get update</span>
+
+<span class="go">sudo apt-get install build-essential cmake flatbuffers-compiler git libasound2-dev libayatana-appindicator3-dev libegl-dev libflatbuffers-dev libftdi1-dev libgl-dev libglvnd-dev libgtk-3-dev liblzma-dev libpipewire-0.3-dev libssl-dev libsystemd-dev libturbojpeg0-dev libusb-1.0-0-dev libx11-dev libzstd-dev ninja-build patchelf pkg-config python3 qt6-serialport-dev qt6-base-dev unzip wget</span>
+</code></pre></div>
+<p>For Raspberry Pi CEC support (optional)
+<div class="highlight"><pre><span></span><code><span class="go">sudo apt-get install libcec-dev libp8-platform-dev libudev-dev</span>
+</code></pre></div></p>
+<h3 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="go">sudo dnf -y install alsa-lib-devel chrpath cmake fedora-packager flatbuffers-compiler flatbuffers-devel gcc gcc-c++ git gtk3-devel libX11-devel libayatana-appindicator-gtk3-devel libftdi-c++-devel libglvnd-devel libusb1-devel libzstd-devel mesa-libEGL-devel mesa-libGL-devel ninja-build openssl-devel pipewire-devel pkg-config qt6-qtbase-devel qt6-qtserialport-devel systemd-devel turbojpeg-devel unzip wget xz-devel</span>
+</code></pre></div>
+<h3 id="arch-linux">Arch Linux<a class="headerlink" href="#arch-linux" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="go">sudo pacman -Syy</span>
+
+<span class="go">sudo pacman -S alsa-lib base-devel bash binutils chrpath cmake dpkg fakeroot flatbuffers freetds git gtk3 libayatana-appindicator libfbclient libftdi libglvnd libjpeg-turbo libx11 mariadb-libs mesa ninja openssl pipewire pkgfile postgresql-libs python qt6-base qt6-serialport sdbus-cpp systemd-libs unzip wayland wget xz</span>
+</code></pre></div>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>We assume a 64bit Windows 10. Install the following:</p>
+<ul>
+<li><a href="https://git-scm.com/downloads">Git</a> (Check during installation: Add to PATH)</li>
+<li><a href="https://cmake.org/download/">CMake (Windows win64-x64 Installer)</a> (Check during installation: Add to PATH)</li>
+<li><a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022 Community Edition</a><ul>
+<li>Select 'Desktop development with C++'</li>
+<li>On the right, just select <code>MSVC v143 VS 2022 C++ x64/x86-Buildtools</code> and latest <code>Windows 10 SDK</code>. Everything else is not needed, but you can stay with default selection.</li>
+</ul>
+</li>
+<li><a href="https://slproweb.com/products/Win32OpenSSL.html">OpenSSL</a> (for QT5.15-6.2: OpenSSL v1.1.1, for QT6: OpenSSL 3)</li>
+<li><a href="https://github.com/libjpeg-turbo/libjpeg-turbo/releases">libjpeg-turbo</a></li>
+<li><a href="https://www.python.org/downloads/windows/">Python 3 (Windows x86-64 executable installer)</a> (Check during installation: Add to PATH and Debug Symbols)<ul>
+<li>Open a console window and execute <code>pip install aqtinstall</code>.</li>
+<li>Now we can download Qt to <em>C:\Qt</em> <code>mkdir c:\Qt &amp;&amp; aqt install -O c:\Qt 6.8.3 windows desktop win64_msvc2022_64 -m qtserialport</code></li>
+<li>May need to add QT6 path before compiling, for example: <code>set CMAKE_PREFIX_PATH=C:\Qt\6.8.3\msvc2022_64\lib\cmake\</code> or for older QT5 <code>set Qt5_Dir=C:\Qt\5.15.2\msvc2019_64\lib\cmake\Qt5\</code></li>
+</ul>
+</li>
+<li>Optional for creating installer packages: <a href="https://sourceforge.net/projects/nsis/files/NSIS%203/">NSIS 3.x</a> (<a href="https://sourceforge.net/projects/nsis/files/latest/download">direct link</a>)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After you execute the configuration command in the build folder (for example <code>cmake -DCMAKE_BUILD_TYPE=Release ..</code>) you should receive *.sln solution project file that can be opened in Visual Studio. Select <code>hyperhdr</code> project as default for the solution to run it after compilation.</p>
+</div>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>First install <a href="https://brew.sh/">brew</a> manager.<br />
+Next: <code>brew install qtbase qtserialport cmake xz pkg-config</code></p>
+<h2 id="compiling-and-installing-hyperhdr">Compiling and installing HyperHDR<a class="headerlink" href="#compiling-and-installing-hyperhdr" title="Permanent link">&para;</a></h2>
+<h3 id="linuxmacos-the-general-quick--recommended-way">Linux/macOS: the general quick &amp; recommended way<a class="headerlink" href="#linuxmacos-the-general-quick--recommended-way" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/awawa-dev/HyperHDR.git<span class="w"> </span>hyperhdr
+<span class="nb">cd</span><span class="w"> </span>hyperhdr
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
+make<span class="w"> </span>-j<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span>
+
+<span class="c1"># if this get stucked and dmesg says out of memory try:</span>
+make<span class="w"> </span>-j<span class="w"> </span><span class="m">2</span>
+
+<span class="c1"># Run it from the build directory</span>
+bin/hyperhdr<span class="w"> </span>-d
+
+<span class="c1"># BUILD INSTALLERS (recommended method to install HyperHDR, doesnt work for ArchLinux: use build.sh script )</span>
+cpack
+<span class="c1"># or compile and build the package using one command</span>
+cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--target<span class="w"> </span>package<span class="w"> </span>--config<span class="w"> </span>Release
+</code></pre></div>
+<h3 id="windows-the-general-quick--recommended-way">Windows: the general quick &amp; recommended way<a class="headerlink" href="#windows-the-general-quick--recommended-way" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/awawa-dev/HyperHDR.git<span class="w"> </span>hyperhdr
+<span class="nb">cd</span><span class="w"> </span>hyperhdr
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+<span class="c1"># You might need to setup MSVC env first</span>
+call<span class="w"> </span><span class="s2">&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat&quot;</span>
+<span class="c1"># Maintainers: to build the HyperHDR installer, install NSIS and define environment variable:  </span>
+<span class="c1"># set VCINSTALLDIR=&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC&quot;</span>
+cmake<span class="w"> </span>-DPLATFORM<span class="o">=</span>windows<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;Visual Studio 17 2022&quot;</span><span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
+cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release<span class="w"> </span>--<span class="w"> </span>-maxcpucount
+
+<span class="c1"># Run it from the build directory</span>
+bin/Release/hyperhdr<span class="w"> </span>-d
+</code></pre></div>
+<h3 id="libreelec">LibreELEC<a class="headerlink" href="#libreelec" title="Permanent link">&para;</a></h3>
+<p>You can find the add-on sources here on branches of my LibreELEC fork: <a href="https://github.com/awawa-dev/LibreELEC.tv">link</a> For example <code>libreelec-11.0-hyperhdr</code> branch. Adjust HyperHDR package properties in <code>packages/addons/service/hyperhdr/package.mk</code> Follow LibreELEC's manual on how to build the image. For example: </p>
+<p>LibreELEC 11/RPi:
+<div class="highlight"><pre><span></span><code>PROJECT=RPi ARCH=arm DEVICE=RPi4 make image
+PROJECT=RPi DEVICE=RPi4 ARCH=arm ./scripts/create_addon hyperhdr
+</code></pre></div></p>
+<p>LibreELEC 12/RPi:
+<div class="highlight"><pre><span></span><code>PROJECT=RPi ARCH=aarch64 DEVICE=RPi4 make image
+PROJECT=RPi DEVICE=RPi4 ARCH=aarch64 ./scripts/create_addon hyperhdr
+</code></pre></div></p>
+<p>PC(x86_64):
+<div class="highlight"><pre><span></span><code>PROJECT=Generic ARCH=x86_64 DEVICE=Generic make image
+PROJECT=Generic DEVICE=Generic ARCH=x86_64 ./scripts/create_addon hyperhdr
+</code></pre></div></p>
+<hr />
+<h1 id="build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker">Build a HyperHDR installer for any supported Linux system on any system using Docker<a class="headerlink" href="#build-a-hyperhdr-installer-for-any-supported-linux-system-on-any-system-using-docker" title="Permanent link">&para;</a></h1>
+<p>All you need is Docker and Bash, which are available on every supported system — even on Windows, where you only need to enable "Windows Subsystem for Linux". You don’t need to install any additional packages to build HyperHDR, because the script uses Docker images provided by <a href="https://github.com/awawa-dev/HyperDockerBuilder">HyperDockerBuilder</a>, which contain everything required to create the installer. Thanks to this, you can compile, for example, the aarch64 HyperHDR installer for Raspberry Pi directly on a PC. To start, run the <code>build.sh</code> script in the main directory.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">pi@ubuntu:~/hyperhdr$ </span>./build.sh<span class="w"> </span>
+
+<span class="go">Required environmental options:</span>
+<span class="go">PLATFORM - one of the supported targets: osx|windows|linux|rpi</span>
+<span class="go">DISTRO_NAME  | DISTRO_VERSION | ARCHITECTURE - these are only for linux targets</span>
+<span class="go">   debian    | bullseye       | armhf</span>
+<span class="go">   debian    | bullseye       | arm64</span>
+<span class="go">   debian    | bullseye       | amd64</span>
+<span class="go">   debian    | bookworm       | armhf</span>
+<span class="go">   debian    | bookworm       | arm64</span>
+<span class="go">   debian    | bookworm       | amd64</span>
+<span class="go">   debian    | trixie         | armhf</span>
+<span class="go">   debian    | trixie         | arm64</span>
+<span class="go">   debian    | trixie         | amd64</span>
+<span class="go">   ubuntu    | jammy          | amd64</span>
+<span class="go">   ubuntu    | noble          | amd64</span>
+<span class="go">   ubuntu    | questing       | amd64</span>
+<span class="go">   fedora    | 43             | amd64</span>
+<span class="go">   archlinux | latest         | amd64</span>
+
+<span class="go">Optional environmental options:</span>
+<span class="go">BUILD_TYPE - Release|Debug, default is Release version</span>
+<span class="go">BUILD_ARCHIVES - false|true, cpack will build ZIP package</span>
+<span class="go">USE_STANDARD_INSTALLER_NAME - false|true, use standard Linux package naming</span>
+<span class="go">USE_CCACHE - false|true, use ccache if available</span>
+<span class="go">RESET_CACHE - false|true, reset ccache storage</span>
+
+<span class="go">Example of usage:</span>
+<span class="go">PLATFORM=rpi DISTRO_NAME=debian DISTRO_VERSION=bullseye ARCHITECTURE=arm64 ./build.sh</span>
+<span class="go">Installers from Docker builds will be ready in the deploy folder</span>
+</code></pre></div>
+<p>The <code>build.sh</code> script can also be used to natively build macOS/Windows installers as an alternative to the method described in the previous point. Of course, then you must have all the necessary packages installed.</p>
+<hr />
+<h1 id="onlinegithub-action">Online:Github Action<a class="headerlink" href="#onlinegithub-action" title="Permanent link">&para;</a></h1>
+<p>Fork HyperHDR project. Now you must enable project's <code>Settings → Actions → Actions permissions → Allow all actions and reusable workflows</code> and save it.
+Once you've done this, any change, even using the Github online editor, will immediately trigger the build in the Actions tab. If this did not happen, you probably did not enable the option described or did it later after making the changes.</p>
+<hr />
+<h1 id="available-cmake-hyperhdr-configuration-options">Available CMake HyperHDR configuration options:<a class="headerlink" href="#available-cmake-hyperhdr-configuration-options" title="Permanent link">&para;</a></h1>
+<p>Use -D prefix when configuring the build.</p>
+<ul>
+<li>
+<p>LED DEVICES  </p>
+<ul>
+<li>ENABLE_SPIDEV = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables SPI LED devices on supported systems</li>
+<li>ENABLE_SPI_FTDI = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables SPI libFTDI (FTDI for Windows) controller</li>
+<li>ENABLE_WS281XPWM = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables WS281x LED library for RPi 1-4</li>
+</ul>
+</li>
+<li>
+<p>SOFTWARE GRABBERS</p>
+<ul>
+<li>ENABLE_DX = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the DirectX11 software grabber (Windows)</li>
+<li>ENABLE_FRAMEBUFFER = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the Framebuffer software grabber (Linux)</li>
+<li>ENABLE_MAC_SYSTEM = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the macOS software grabber (macOS)</li>
+<li>ENABLE_PIPEWIRE = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the Pipewire software grabber (Linux)</li>
+<li>ENABLE_PIPEWIRE_EGL = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables EGL for the Pipewire grabber (Linux)</li>
+<li>ENABLE_X11 = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the X11 software grabber (Linux)</li>
+<li>ENABLE_AMLOGIC = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, forces the Amlogic software grabber (Linux)</li>
+</ul>
+</li>
+<li>
+<p>HARDWARE GRABBERS</p>
+<ul>
+<li>ENABLE_AVF = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the AVF USB grabber support (macOS)</li>
+<li>ENABLE_MF = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the MediaFoundation USB grabber support (Windows)</li>
+<li>ENABLE_V4L2 = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the V4L2 USB grabber support (Linux)</li>
+</ul>
+</li>
+<li>
+<p>SOUND CAPTURING</p>
+<ul>
+<li>ENABLE_SOUNDCAPLINUX = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the ALSA sound grabber (Linux)</li>
+<li>ENABLE_SOUNDCAPMACOS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the sound grabber (macOS)</li>
+<li>ENABLE_SOUNDCAPWINDOWS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the sound grabber (Windows)</li>
+</ul>
+</li>
+<li>
+<p>SERVICE SUPPORT</p>
+<ul>
+<li>ENABLE_BONJOUR = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables mDNS (do not disable unless required)</li>
+<li>ENABLE_CEC = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the HDMI-CEC support (Linux)</li>
+<li>ENABLE_MQTT = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the MQTT support</li>
+<li>ENABLE_POWER_MANAGEMENT = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables sleep/wake up OS events support</li>
+<li>ENABLE_PROTOBUF = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables Proto-Buffer server</li>
+<li>ENABLE_SYSTRAY = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables the systray-widget</li>
+<li>ENABLE_ZSTD = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enables ZSTD support for LUT decompression</li>
+</ul>
+</li>
+<li>
+<p>BUILD FEATURES</p>
+<ul>
+<li>USE_SHARED_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, build the application as non-monolithic</li>
+<li>USE_EMBEDDED_WEB_RESOURCES = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, embed web content into the app</li>
+<li>USE_PRECOMPILED_HEADERS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, use pre-compiled headers when building</li>
+<li>USE_CCACHE_CACHING = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, enable CCache support if available</li>
+<li>USE_SYSTEM_MQTT_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, prefer system qMQTT libs</li>
+<li>USE_SYSTEM_FLATBUFFERS_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, prefer system Flatbuffers libs</li>
+<li>USE_SYSTEM_SDBUS_CPP_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, prefer system sdbus_c++ libs</li>
+<li>USE_SYSTEM_LUNASVG_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, prefer system lunasvg libs</li>
+<li>USE_SYSTEM_NANOPB_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, prefer system nanopb libs</li>
+<li>USE_SYSTEM_STB_LIBS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, prefer system stb libs</li>
+<li>USE_STATIC_QT_PLUGINS = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, embed static QT-plugins into the app</li>
+<li>USE_STANDARD_INSTALLER_NAME = <span style="color: green; font-family: sans-serif;">ON</span> | <span style="color: red; font-family: sans-serif;">OFF</span>, use standard Linux package naming</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
