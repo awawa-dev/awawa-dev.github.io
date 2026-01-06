@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: trixie
+Date: Tue, 06 Jan 2026 15:58:59 UTC
+Architectures: amd64 arm64 armhf
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 1336bc637ed24b73a2827a97d08660b9 9081 main/binary-amd64/Packages
+ 71c252d864171acc2610400ae5465914 3761 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+ adc55acc42410f41295cc6f9856c6913 9069 main/binary-arm64/Packages
+ 3d9d6c934c42d99eba89762864547021 3753 main/binary-arm64/Packages.gz
+ 5caa88b64ef5b2dcb162b42889483fe0 116 main/binary-arm64/Release
+ c7ae362081404d07c5502ff78eaafa9e 9069 main/binary-armhf/Packages
+ 7f9a983f56ae9e709b2458e70408887f 3752 main/binary-armhf/Packages.gz
+ 566be1e629aeb1f6f62674d6f15b76cf 116 main/binary-armhf/Release
+SHA1:
+ 0c2bd493e05dc30635abc2d179d1adbd648f8e4e 9081 main/binary-amd64/Packages
+ a863cc61f2b1a88ddd7d5e4627f424bb602a18da 3761 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+ 6e00eba3d424c4caba917eb06178b9a956a3707f 9069 main/binary-arm64/Packages
+ 184cdf7a0f6382af8350dd9f2e6d610b916716b9 3753 main/binary-arm64/Packages.gz
+ 91b30e64802ea912420e28e8ca903b399ecdccad 116 main/binary-arm64/Release
+ fa760f8286d7e050b8aecf6ba99bb14295ac7525 9069 main/binary-armhf/Packages
+ 4979f682182eced7b2b894b6bbde26665b43e4e4 3752 main/binary-armhf/Packages.gz
+ f0196e2b1756087705bb793d2e2be8abd7048466 116 main/binary-armhf/Release
+SHA256:
+ de2dab64ffab13273e3f3f0ccc1d0b886f5bd862746ca4858c39c8c0fee56a61 9081 main/binary-amd64/Packages
+ 2f3ca2b38c86417d0383724a75930738b7a1ac2e418485961859a7748eda4e6e 3761 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+ db9bf538b079a6c30fbb85773b0ee3ffb9ad011659992177db6ee8af63573bb6 9069 main/binary-arm64/Packages
+ e6b4656d0a682aef754e76d5c151fffce21dc030ef17571a12a71f2da8f90be0 3753 main/binary-arm64/Packages.gz
+ f0e3c58227c40cae0a7432b18b2f4499bd6a06667c1c1d61571010805da69952 116 main/binary-arm64/Release
+ ce75732b88fc3c688705d0641cf76049132afcb920e64e7f90a6eac35244ccb6 9069 main/binary-armhf/Packages
+ 6d6a42511750c3f21d036eaa89a69d30fb45c817cb7691977ab0ce65dfe19afb 3752 main/binary-armhf/Packages.gz
+ 379afdadca32af6b37f1ef05858ddea9464e47f06e6a38238ea4e93a5afe645b 116 main/binary-armhf/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmldMUQACgkQEnYOCwtm
+h8e1JwwAhKpdlHhQjMejoqw1NUvWJBnyEhx/tW1+JeKBsj1CIw/DPO1qdf143FMJ
+OJ69TPZQmPO6Q3L7Z2wSxjjrmAiDZz8AmJcPvfxJSKwuKNAGy1X7wKxltvKTBccl
+krmA8PZpQjN7KkMVFsUgoQ/xz23QOOYHtLCi//eVozEuIHR4HPIxX7GOyORXkmYd
+0Qmnc43N7h5abehqvdzFpXb/oLvEX2oTS5sB8Iqk+8es4AwmN3FhZ3J25kuCJean
+5fI3tkJAMz55F1DdP0ydt5YX6/rasSSdERbEJEbxMdGun8x5gIcJMF9TFexgtMQL
+/BPLe3FuCQLY50zdEgDkn1DGnjycSAew8gwW4QeQPQNkli+60MQyaqbako3ppZPA
+0yTsrEWuxnAh3RkxddD5qH75ci3dyt6cVDVnOlXbWkGVlQ8sLnhYTSsi6msJFscw
+UB0sIn16Vzw4ZTP4sZBYk13iM106Dyf9k2C/tK7+LO21Q2VjB5f06wNfIUHBINzC
+JScTe/E7
+=5SxS
+-----END PGP SIGNATURE-----

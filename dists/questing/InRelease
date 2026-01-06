@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: questing
+Date: Tue, 06 Jan 2026 15:59:01 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 2610728048e5242424252862ae4e26fb 9085 main/binary-amd64/Packages
+ 4df6398392c877c5bb757ddc81f753a5 3759 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 5fac68a24215cdd84564335e50ef6090bc1a76b9 9085 main/binary-amd64/Packages
+ df7825a0ff2aac028d55a41ddf165d99c85a586d 3759 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ aceb3d93d927a7a6a6949e2ea1197cfd3957681491d609bd0e26b7294517a83c 9085 main/binary-amd64/Packages
+ 09bedd9bfaaefee50cb163a97d972b47caa319bff3ed65b71d011ac9b008a6d0 3759 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmldMUYACgkQEnYOCwtm
+h8dNEgwA4BMW1P4rUfUXJB9+D9h6KfCn7SxqEUn8wOtEFVvqZzIM88tLuCKJvl1i
+HbZg1vTfhBvsiH4r+vV8daNvVJ/xDz3wP+L8fySLsDYk3PeeGJIXvfvGz/CooSM9
+znWN0RmbWbszNNSoRzM4eM1iXPhJIG1Zq9aqVqfMFr1dw9sBE88NcDVAqMC1PHfK
+YMSG6lfcZR495Z+Sp3eu3cme3+uvTkT/YzVCrtYO+V6um/QASDak4ln8KEb32bN3
+dcEmKSA3O/nRcShGXl4ygPBmtGawCRddHG31dEEOzFXYCORu1fqmQSc4FaVJklsK
+wg/NxiNJ4pzhzpHRgvIdk8i1a823DHqVeK7Tqso83Ka2hcHoE7o9D/McjVZIpSKL
+L/fzmgH15i43IFG7PTEcIFjEtWLS+eNeNuzcMuFHeBHRFhteQURPJLSbcsm8bPIR
+Mca0Khp0S+3K7m0fWRMNseDQ2LvsAjSBhdWbS8jksUj8ysM/IRpOErcxQ9ftbLxu
+8Bvu2boc
+=7FCy
+-----END PGP SIGNATURE-----
