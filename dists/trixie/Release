@@ -1,0 +1,37 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: trixie
+Date: Thu, 29 Jan 2026 22:36:43 UTC
+Architectures: amd64 arm64 armhf
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ c68222483d80ab9c8aeb8d295faeaee1 9081 main/binary-amd64/Packages
+ 70234b7e11a9f9618eba6a2c2e51d68e 3760 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+ 1f215bed02f7ee6269ecac061f029bd3 9069 main/binary-arm64/Packages
+ 18442054919744cf3ea0380bd52da295 3753 main/binary-arm64/Packages.gz
+ 5caa88b64ef5b2dcb162b42889483fe0 116 main/binary-arm64/Release
+ e8746745d7f3b0fa3b9598a72d6116ea 9069 main/binary-armhf/Packages
+ e3c79d2ead04e64a58514d55353df3bb 3752 main/binary-armhf/Packages.gz
+ 566be1e629aeb1f6f62674d6f15b76cf 116 main/binary-armhf/Release
+SHA1:
+ 49b64208e90cc24b7602948f4cfc290d63fb5c7d 9081 main/binary-amd64/Packages
+ 96bce69cf8e8bf9a7a0621e92a1fc70efea060d5 3760 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+ 89c6528761b2865d9ddc4a6992124db837a3768a 9069 main/binary-arm64/Packages
+ 74ccb74d2b196d172ee2333ace28a6083407f40f 3753 main/binary-arm64/Packages.gz
+ 91b30e64802ea912420e28e8ca903b399ecdccad 116 main/binary-arm64/Release
+ 5e331002aa6095de401130b043a4eb2fc11fba8c 9069 main/binary-armhf/Packages
+ 856abbbc5d4d6e99c8c31da96fb028732107c125 3752 main/binary-armhf/Packages.gz
+ f0196e2b1756087705bb793d2e2be8abd7048466 116 main/binary-armhf/Release
+SHA256:
+ a30cb808737acfa55097a2734f72a7bd54b8061e196456cac207d81334055f30 9081 main/binary-amd64/Packages
+ 52f148031eb97f3be0b5cb6be7c841a1029d5e8b5b85e2fd4437d22b47a338ad 3760 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+ c5116de25baab63380439b7de3432cba656542be876eaf3dfa8ac1a92594d23b 9069 main/binary-arm64/Packages
+ 7f7a093fbc9dbc3466410a2a86b9ebb8505978fea4ad23df97a6104d0e529b6f 3753 main/binary-arm64/Packages.gz
+ f0e3c58227c40cae0a7432b18b2f4499bd6a06667c1c1d61571010805da69952 116 main/binary-arm64/Release
+ f17c1fe4c8b7a0e56e367ad260258a458614440e73aee7573ad8450f5a8e6afd 9069 main/binary-armhf/Packages
+ 2c48d92fe33f45773ca64dcabe3ac490e5a166ed2f5727e2cac0c2f48f6d455a 3752 main/binary-armhf/Packages.gz
+ 379afdadca32af6b37f1ef05858ddea9464e47f06e6a38238ea4e93a5afe645b 116 main/binary-armhf/Release

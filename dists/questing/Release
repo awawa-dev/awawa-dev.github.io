@@ -1,0 +1,19 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: questing
+Date: Thu, 29 Jan 2026 22:36:45 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ db8b08a7a6f056125df93c696695275f 9085 main/binary-amd64/Packages
+ 90ed9ba1442e4056f0d65f09edd6f1d0 3761 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ b2a9a07bddf4409b4874fca0fe5fa64e3414ff60 9085 main/binary-amd64/Packages
+ 2129f24072bfe2e2308781a15a3a47aa6747dde3 3761 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ d8e9c68f2f72b3119ca1884ce6271032da248c193e6c7d051ec82c9e285bc8b3 9085 main/binary-amd64/Packages
+ e0c4cebc7ffa5b8855947f02cbfd59143ae84b9eda0a3345c3307af9a343b625 3761 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
