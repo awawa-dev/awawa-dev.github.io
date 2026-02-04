@@ -82,8 +82,8 @@ jobs:
           echo "" >> wiki-build/slugify_github.py
           echo "def github_slugify(value, separator='-'):" >> wiki-build/slugify_github.py
           echo "    value = value.strip().lower()" >> wiki-build/slugify_github.py
-          echo "    value = re.sub(r'\\s+', '-', value)" >> wiki-build/slugify_github.py
-          echo "    value = re.sub(r'[^a-z0-9\\-]', '', value)" >> wiki-build/slugify_github.py
+          echo '    value = re.sub(r"\s+", "-", value)' >> wiki-build/slugify_github.py
+          echo '    value = re.sub(r"[^a-z0-9\-]", "", value)' >> wiki-build/slugify_github.py
           echo "    return value" >> wiki-build/slugify_github.py
 
           MKDOCS_CONFIG="wiki-build/mkdocs.yml"
@@ -91,7 +91,7 @@ jobs:
 
           cat <<EOF > "$MKDOCS_CONFIG"
           site_name: HyperHDR Wiki
-          site_url: https://awawa-dev.github.io/wiki/
+          site_url: https://wiki.hyperhdr.eu/
           use_directory_urls: false
           extra_css:
             - assets/stylesheets/overrides.css
@@ -178,6 +178,19 @@ jobs:
 
           git push origin upload --force
 
+      - name: Prepare static build for Cloudflare
+        run: |
+          set -e
+          cat <<EOF > wiki-build/site-wiki/robots.txt
+          User-agent: *
+          Allow: /
+          Sitemap: https://wiki.hyperhdr.eu/sitemap.xml
+          EOF
 
-
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy wiki-build/site-wiki --project-name=hyperhdr-wiki --branch=master --commit-hash=${{ github.sha }}
 
