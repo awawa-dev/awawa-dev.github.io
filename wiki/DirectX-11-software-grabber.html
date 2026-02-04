@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://wiki.hyperhdr.eu/Home-Assistant-lights.html">
+        <link rel="canonical" href="https://wiki.hyperhdr.eu/DirectX-11-software-grabber.html">
       
       
-        <link rel="prev" href="Zigbee2MQTT-lights.html">
-      
-      
-        <link rel="next" href="JSON-API.html">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Home Assistant lights - HyperHDR Wiki</title>
+        <title>DirectX 11 software grabber - HyperHDR Wiki</title>
       
     
     
@@ -67,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#home-assistant-configuration" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home Assistant lights
+              DirectX 11 software grabber
             
           </span>
         </div>
@@ -446,20 +437,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -480,7 +469,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -719,35 +708,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home Assistant lights
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="Home-Assistant-lights.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="Home-Assistant-lights.html" class="md-nav__link">
         
   
   
@@ -763,46 +727,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#home-assistant-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Home Assistant configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hyperhdr-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HyperHDR configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1080,36 +1004,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#home-assistant-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Home Assistant configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hyperhdr-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HyperHDR configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1125,47 +1019,18 @@
 
 
 
-  <h1>Home Assistant lights</h1>
-
-<h2 id="home-assistant-configuration">Home Assistant configuration<a class="headerlink" href="#home-assistant-configuration" title="Permanent link">&para;</a></h2>
-<p>I assume you've already configured your lights in Home Assistant. The photo below shows Philips Hue lights connected via a ZigBee adapter.</p>
-<p><a href="https://github.com/user-attachments/assets/53de8fa8-67dd-4989-bc8e-784697b09650"><img src="https://github.com/user-attachments/assets/53de8fa8-67dd-4989-bc8e-784697b09650" width="80%" /></a><br/></p>
-<p>If the lights work properly in Home Assistant, you need to create one more thing necessary to support them in HyperHDR: <code>Long Lived Access Token</code>.
-You will find the required option in the Home Assistant user security settings as in the screenshot below.
-You must copy it immediately when creating and save it.</p>
-<p><a href="https://github.com/user-attachments/assets/73866d9d-4957-4986-9a8b-b5c3deddbdc4"><img src="https://github.com/user-attachments/assets/73866d9d-4957-4986-9a8b-b5c3deddbdc4" width="80%" /></a><br/></p>
-<h2 id="hyperhdr-configuration">HyperHDR configuration<a class="headerlink" href="#hyperhdr-configuration" title="Permanent link">&para;</a></h2>
-<p>Open HyperHDR and go to LED Hardware. Select "Home Assistant" from the tab and then click the button to launch the configuration wizard.</p>
-<p><a href="https://github.com/user-attachments/assets/c2f858ad-6e48-4d08-a7de-349da2aef431"><img src="https://github.com/user-attachments/assets/c2f858ad-6e48-4d08-a7de-349da2aef431" width="80%" /></a><br/></p>
-<p>By clicking the <code>Select Home Assistant</code> button you can see the list of instances that HyperHDR has found and choose the one you are interested in. Then below you need to enter the <code>Long Lived Access Token</code> that you created earlier in Home Assistant. When finished click the <code>Continue</code> button.</p>
-<p><a href="https://github.com/user-attachments/assets/3e262c10-ebd9-4329-81a4-71c9893c968f"><img src="https://github.com/user-attachments/assets/3e262c10-ebd9-4329-81a4-71c9893c968f" width="80%" /></a><br/></p>
-<p>On the next page HyperHDR will display all the supported lights it found in the Home Assistant instance. Now you can assign them a default position to the screen and intuit each of them (it will be turned off and on) so you can see which lamp you are configuring. You can always fix this configuration later in the LED layout editor. When you are done, save your changes.</p>
-<p><a href="https://github.com/user-attachments/assets/688d20cb-5609-4067-ab07-884563be8e42"><img src="https://github.com/user-attachments/assets/688d20cb-5609-4067-ab07-884563be8e42" width="80%" /></a><br/></p>
-<p>Congratulations! That's all. In the options you can also:</p>
-<ul>
-<li>
-<p>choose between the RGB or HSL model. Each of them behaves slightly differently and it also depends on the lamp model how/whether it supports it or not</p>
-</li>
-<li>
-<p>set <code>transition time</code> which will provide smoother color transitions at the expense of delay</p>
-</li>
-<li>
-<p>by default <code>brightness</code> is not dynamic and not depends on the brightness of the selected color. However, you can change it and force it to be dynamic.  </p>
-</li>
-</ul>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Setting dynamic brightness (constant brightness = 0) doubles the communication overhead. May affect latency.</p>
-</div>
-<ul>
-<li>if you want HyperHDR to restore to the original state it found at startup when turned off, check the option: <code>restore lights' original state when disabled</code></li>
-</ul>
+  <h1>DirectX 11 software grabber</h1>
 
 
 
 
 
 
+
+
+
+  
+  
 
 
 
