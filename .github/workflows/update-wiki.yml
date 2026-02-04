@@ -82,8 +82,8 @@ jobs:
           echo "" >> wiki-build/slugify_github.py
           echo "def github_slugify(value, separator='-'):" >> wiki-build/slugify_github.py
           echo "    value = value.strip().lower()" >> wiki-build/slugify_github.py
-          echo "    value = re.sub(r'\\s+', '-', value)" >> wiki-build/slugify_github.py
-          echo "    value = re.sub(r'[^a-z0-9\\-]', '', value)" >> wiki-build/slugify_github.py
+          echo '    value = re.sub(r"\s+", "-", value)' >> wiki-build/slugify_github.py
+          echo '    value = re.sub(r"[^a-z0-9\-]", "", value)' >> wiki-build/slugify_github.py
           echo "    return value" >> wiki-build/slugify_github.py
 
           MKDOCS_CONFIG="wiki-build/mkdocs.yml"
@@ -91,7 +91,7 @@ jobs:
 
           cat <<EOF > "$MKDOCS_CONFIG"
           site_name: HyperHDR Wiki
-          site_url: https://awawa-dev.github.io/wiki/
+          site_url: https://wiki.hyperhdr.eu/
           use_directory_urls: false
           extra_css:
             - assets/stylesheets/overrides.css
@@ -178,6 +178,56 @@ jobs:
 
           git push origin upload --force
 
+      - name: Prepare static build for Cloudflare
+        run: |
+          set -e
+          cat <<EOF > wiki-build/site-wiki/robots.txt
+          User-agent: *
+          Allow: /
+          Sitemap: https://wiki.hyperhdr.eu/sitemap.xml
+          EOF
+          echo "${{ vars.INDEXNOW_KEY }}" > wiki-build/site-wiki/${{ vars.INDEXNOW_KEY }}.txt
 
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy wiki-build/site-wiki --project-name=hyperhdr-wiki --branch=master --commit-hash=${{ github.sha }}
 
+      - name: Notify IndexNow
+        run: |
+          echo "Sending IndexNow for Wiki..."
+          HTTP_CODE_WIKI=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://www.bing.com/indexnow" \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "wiki.hyperhdr.eu",
+            "key": "${{ vars.INDEXNOW_KEY }}",
+            "keyLocation": "https://wiki.hyperhdr.eu/${{ vars.INDEXNOW_KEY }}.txt",
+            "urlList": [
+              "https://wiki.hyperhdr.eu/",
+              "https://wiki.hyperhdr.eu/sitemap.xml"
+            ]
+          }')
+          echo "Wiki Response: $HTTP_CODE_WIKI"
 
+          echo "Sending IndexNow for Blogger..."
+          HTTP_CODE_BLOGGER=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://www.bing.com/indexnow" \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "www.hyperhdr.eu",
+            "key": "${{ vars.INDEXNOW_KEY }}",
+            "keyLocation": "https://www.hyperhdr.eu/${{ vars.INDEXNOW_KEY }}.txt",
+            "urlList": [
+              "https://www.hyperhdr.eu/",
+              "https://www.hyperhdr.eu/sitemap.xml"
+            ]
+          }')
+          echo "Blogger Response: $HTTP_CODE_BLOGGER"
+
+          if [[ "$HTTP_CODE_WIKI" =~ ^(200|202)$ ]] && [[ "$HTTP_CODE_BLOGGER" =~ ^(200|202)$ ]]; then
+            echo "Both submissions successful!"
+          else
+            echo "Error: One or more submissions failed! (Wiki: $HTTP_CODE_WIKI, Blogger: $HTTP_CODE_BLOGGER)"
+            exit 1
+          fi
