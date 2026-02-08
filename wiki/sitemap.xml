@@ -1,107 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://awawa-dev.github.io/wiki/index.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/index.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Audio-reactive.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Audio-reactive.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Automatic-tone-mapping.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Automatic-tone-mapping.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Common-problems-%26-questions.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Common-problems-%26-questions.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Compiling-HyperHDR.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Compiling-HyperHDR.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/FAQ.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/DirectX-11-software-grabber.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Getting-started.-Needed-components.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/FAQ.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Home-Assistant-lights.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Getting-started.-Needed-components.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Home.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Home-Assistant-lights.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Hue-Entertainment-API-v2.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Home.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/HyperSerial.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Hue-Entertainment-API-v2.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Infinite-color-engine.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/HyperSerial.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Installation.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Infinite-color-engine.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Instance-synchronization.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Installation.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/JSON-API.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Instance-synchronization.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/LUT-calibration.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/JSON-API.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Level-Shifter.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/LUT-calibration.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/LibreELEC.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Level-Shifter.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/LinuxUpdateScript.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/LibreELEC.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/P010-video-format.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/LinuxUpdateScript.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Quick-start.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/P010-video-format.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Raspberry-Pi-5-PWM.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Quick-start.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Raspberry-Pi-OS-read-only-mode.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Raspberry-Pi-5-PWM.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Software-screen-capture.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Raspberry-Pi-OS-read-only-mode.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/Zigbee2MQTT-lights.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Software-screen-capture.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
     <url>
-         <loc>https://awawa-dev.github.io/wiki/_Sidebar.html</loc>
-         <lastmod>2026-01-28</lastmod>
+         <loc>https://wiki.hyperhdr.eu/Zigbee2MQTT-lights.html</loc>
+         <lastmod>2026-02-15</lastmod>
+    </url>
+    <url>
+         <loc>https://wiki.hyperhdr.eu/_Sidebar.html</loc>
+         <lastmod>2026-02-15</lastmod>
     </url>
 </urlset>
