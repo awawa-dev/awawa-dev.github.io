@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperk Installer</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">    
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+
+    <style>
+        :root {
+            --hyperk-pink: #E78080;
+            --hyperk-red: #E70000;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .logo-container > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo-h {
+            display: block;
+            width: 156px;
+            height: 156px;
+            background: url("hyperk.png") no-repeat center;
+            background-size: contain;
+            flex-shrink: 0;
+        }
+
+        .yperk {
+            font-size: 5rem;
+            color: #E78080;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .perk { color: #E70000; }
+
+        esp-web-install-button::part(button) {
+            background-color: var(--hyperk-red);
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        article { margin-top: 0; }
+        
+        .setup-guide {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .fail-safe-info {
+            font-size: 0.85rem;
+            padding: 0.75rem;
+            border-left: 3px solid var(--hyperk-red);
+            background: rgba(231, 0, 0, 0.1);
+            color: #f1f1f1;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .logo-h { width: 80px; height: 80px; }
+            .yperk { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <header class="logo-container">
+            <div>
+                <span class="logo-h"></span>
+                <strong class="yperk">y<span class="perk">perk</span></strong>
+            </div>
+            <p>Advanced Firmware Flasher</p>
+        </header>
+
+        <div id="browser-incompatible" style="display:none;">
+            <article class="pico-background-red">
+                <header>⚠️ Browser not supported</header>
+                Please use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong>. Firefox does not support Web Serial.
+            </article>
+        </div>
+
+        <div class="grid">
+            
+            <section>
+                <article>
+                    <header><strong>ESP32 / ESP8266</strong></header>
+
+                    <p id="version-info" style="margin: 0.5rem 0 0.75rem 0; text-align: left; font-weight: 600; color: var(--hyperk-pink); font-size: 1.05rem; padding-left: 0.2rem;"></p>
+                    
+                    <label for="chip-select">Hardware Platform</label>
+                    <select id="chip-select">
+                        <option value="">Connecting to GitHub...</option>
+                    </select>
+
+                    <footer style="text-align: center;">
+                        <div id="btn-loader">Select hardware to flash</div>
+                        <esp-web-install-button id="install-btn" style="display:none;"></esp-web-install-button>
+                    </footer>
+                </article>
+            </section>
+
+            <section>
+                <article>
+                    <header><strong>Raspberry Pi Pico (UF2)</strong></header>
+                    
+                    <p>Pico requires manual flashing via USB Drive mode.</p>
+                    
+                    <div id="pico-buttons" class="grid" style="margin-bottom: 1rem;"></div>
+
+                    <details>
+                        <summary>Instruction for Pico</summary>
+                        <ol>
+                            <li>Hold <strong>BOOTSEL</strong> button.</li>
+                            <li>Connect Pico to USB.</li>
+                            <li>Release button when <strong>RPI-RP2</strong> drive appears.</li>
+                            <li>Drag & drop the <strong>.uf2</strong> file to the drive.</li>
+                        </ol>
+                    </details>
+                </article>
+            </section>
+
+        </div> 
+        <div style="max-width: 700px; margin: 2rem auto;">
+            <article class="setup-guide">
+                <header>
+                    <strong style="color: var(--hyperk-pink);">What's next? (Post-Flash Setup)</strong>
+                </header>
+                <p>After successful flashing, follow these steps to configure your device:</p>
+                <ol style="padding-left: 1.2rem; margin-bottom: 0;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Connect to AP:</strong> Look for a Wi-Fi network named <strong>"Hyperk-Setup"</strong> and connect.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Configuration:</strong> A settings page should open automatically (or go to <code>192.168.4.1</code>).</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Wi-Fi setup:</strong> Enter your home Wi-Fi SSID and Password, then Save.</li>
+                    <li><strong>Reboot:</strong> The device will restart and connect to your network.</li>
+                </ol>
+                <div class="fail-safe-info">
+                    <strong>Fail-safe mechanism:</strong> If the device cannot connect within <strong>12 seconds</strong>, it will automatically return to Access Point mode.
+                </div>
+            </article>
+        </div>
+
+        <footer class="container" style="text-align: center; font-size: 0.8rem; opacity: 0.7; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+            <p style="margin-bottom: 0.5rem;">
+                Firmware source: <a href="https://github.com/awawa-dev/Hyperk" target="_blank">awawa-dev/Hyperk</a>
+            </p>
+            <p style="font-style: italic; line-height: 1.4; max-width: 600px; margin: 0 auto;">
+                <strong>Disclaimer:</strong> This software is provided "as is", without warranty of any kind. 
+                In no event shall the authors be liable for any claim, damages or other liability, 
+                whether in an action of contract, tort or otherwise, arising from, out of or in connection 
+                with the software or the use of the hardware.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        const chipSelect = document.getElementById('chip-select');
+        const installBtn = document.getElementById('install-btn');
+        const loader = document.getElementById('btn-loader');
+        const picoBtns = document.getElementById('pico-buttons');
+        let currentVersion = '';
+
+        let assets = [];
+
+        if (!('serial' in navigator)) {
+            document.getElementById('browser-incompatible').style.display = 'block';
+        }
+
+
+        async function loadReleases(includePrerelease = false) {
+            let res;
+            chipSelect.innerHTML = '<option value="">Loading releases...</option>';
+
+            try {
+                res = await fetch("https://hyperk-github-releases-api-proxy.hyperhdr.workers.dev/");
+                if (!res.ok) throw new Error(`Worker status: ${res.status}`);                
+                console.log("✅ Data from Worker Proxy");
+            } 
+            catch (err) {
+                console.warn("⚠️ Worker failed, falling back to GitHub API...", err);
+                try {
+                    res = await fetch("https://api.github.com/repos/awawa-dev/Hyperk/releases");
+                    if (!res.ok) throw new Error("GitHub API unreachable");
+                    console.log("✅ Data directly from GitHub API");
+                } catch (fallbackErr) {
+                    console.error("❌ Both fetch attempts failed", fallbackErr);
+                    chipSelect.innerHTML = '<option>Critical error: Could not load releases</option>';
+                    return;
+                }
+            }
+
+            try {
+                const data = await res.json();
+                
+                if (Array.isArray(data) && data.length > 0) {
+                    let selectedRelease;
+
+                    if (includePrerelease) {
+                        selectedRelease = data[0];
+                        console.log("🚀 Using latest available release (inc. pre-releases):", selectedRelease.tag_name);
+                    } else {
+                        selectedRelease = data.find(rel => rel.prerelease === false);
+                        if (!selectedRelease) {
+                            console.warn("⚠️ No stable release found in recent history, using latest available.");
+                            selectedRelease = data[0];
+                        } else {
+                            console.log("✅ Using latest stable release:", selectedRelease.tag_name);
+                        }
+                    }
+                    assets = selectedRelease.assets;
+                    currentVersion = selectedRelease.tag_name;
+                    buildUI();
+                }
+                else {
+                    chipSelect.innerHTML = '<option>No releases found...</option>';
+                }
+            }
+            catch (e) {
+                console.error("Error parsing release data:", e);
+                chipSelect.innerHTML = '<option>Error loading files...</option>';
+            }
+        }
+
+        function buildUI() {
+            chipSelect.innerHTML = '<option value="">-- Select Chip --</option>';
+
+            const versionEl = document.getElementById('version-info');
+            if (versionEl && currentVersion) {
+                versionEl.innerHTML = `📦 Hyperk <strong>${currentVersion}</strong>`;
+            }
+
+            const targets = [
+                {id: 'esp32', name: 'ESP32'},
+                {id: 'esp32s2', name: 'ESP32-S2'},
+                {id: 'esp32s3', name: 'ESP32-S3'},
+                {id: 'esp32c3', name: 'ESP32-C3'},
+                {id: 'esp32c6', name: 'ESP32-C6'},
+                {id: 'esp8266', name: 'ESP8266'}
+            ];
+
+            targets.forEach(t => {                
+                const hasFile = assets.some(a => {
+                    const n = a.name.toLowerCase();
+                    if(t.id === 'esp8266') return n.includes('esp8266') && n.endsWith('.bin');
+                    return n.includes(t.id) && n.includes('factory') && n.endsWith('.bin');
+                });
+
+                if(hasFile) {
+                    const opt = document.createElement('option');
+                    opt.value = t.id;
+                    if (t.id === 'esp32s2') {
+                        opt.textContent = 'ESP32-S2 ⚠️ (unstable in web flashing, use esptool.py)';
+                        opt.title = 'May require holding BOOT button. Use esptool.py CLI if it fails.';
+                    } else {
+                        opt.textContent = t.name;
+                    }
+                    chipSelect.appendChild(opt);
+                }
+            });
+
+            picoBtns.innerHTML = '';
+            assets.filter(a => a.name.endsWith('.uf2')).forEach(asset => {
+                const label = asset.name.includes('pico2') ? 'Pico 2 RP2350' : 'Pico 1 RP2040';
+                const btn = document.createElement('a');
+                btn.href = asset.browser_download_url;
+                btn.className = "outline";
+                btn.role = "button";
+                btn.innerText = `Get ${label} FW`;
+                btn.style.width = "100%";
+                btn.style.display = "block";
+                picoBtns.appendChild(btn);
+            });
+        }
+
+        let currentManifestUrl = null;
+
+        async function updateFlasher() {
+            const chip = chipSelect.value;
+            
+            if (!chip) {
+                installBtn.style.display = 'none';
+                loader.style.display = 'block';
+                loader.innerText = "Select the device type";
+                return;
+            }
+
+           const asset = assets.find(a => {
+                const n = a.name.toLowerCase();
+                if (n.startsWith('ota_')) return false;
+                if (chip === 'esp32') return n.includes('esp32_') && n.includes('factory') && n.endsWith('.bin');
+                else if (chip === 'esp8266') return n.includes('esp8266') && n.endsWith('.bin');
+                return n.includes(chip) && n.includes('factory') && n.endsWith('.bin');
+            });
+
+            if (asset) {
+                const proxyBase = "https://hyperhdr-github-proxy.hyperhdr.workers.dev/?url=";
+                const fullProxyUrl = proxyBase + encodeURIComponent(asset.browser_download_url);
+
+                loader.innerText = "Checking the firmware...";
+                loader.style.display = 'block';
+                installBtn.style.display = 'none';
+
+                try {
+
+                    const chipMap = {
+                        'esp32': 'ESP32',
+                        'esp32s2': 'ESP32-S2',
+                        'esp32s3': 'ESP32-S3',
+                        'esp32c3': 'ESP32-C3',
+                        'esp32c6': 'ESP32-C6',
+                        'esp8266': 'ESP8266'
+                    };
+
+                    const flashMode = (chip === 'esp8266') ? 'dout' : 'dio';
+
+                    const manifest = {
+                        name: "Hyperk LED Controller",
+                        builds: [{
+                            chipFamily: chipMap[chip] || 'ESP32',
+                            parts: [{
+                                path: fullProxyUrl,
+                                offset: 0 
+                            }],
+                            flash_mode: flashMode, 
+                            flash_size: "keep"
+                        }]
+                    };
+
+                    console.log("%c [Hyperk Debug] Manifest:", "color: #E78080; font-weight: bold;");
+                    console.log(JSON.stringify(manifest, null, 2));
+                    console.dir(manifest);
+
+                    const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+
+                    if (currentManifestUrl) {
+                        URL.revokeObjectURL(currentManifestUrl);
+                    }
+                    currentManifestUrl = URL.createObjectURL(blob);
+
+                    installBtn.setAttribute('manifest', currentManifestUrl);
+                    
+                    installBtn.style.display = 'block';
+                    loader.style.display = 'none';
+
+                } catch (err) {
+                    console.error("Proxy error:", err);
+                    loader.innerText = "Proxy access denied (403) or missing file!";
+                    loader.style.color = "var(--hyperk-red)";
+                }
+            } else {
+                loader.innerText = "Cannot find the firmware!";
+            }
+        }
+
+        chipSelect.addEventListener('change', updateFlasher);
+        loadReleases(false);
+    </script>
+</body>
+</html>
