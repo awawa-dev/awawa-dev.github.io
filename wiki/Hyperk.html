@@ -1,0 +1,1826 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://wiki.hyperhdr.eu/Hyperk.html">
+      
+      
+        <link rel="prev" href="HyperSerial.html">
+      
+      
+        <link rel="next" href="Raspberry-Pi-5-PWM.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Hyperk 🆕 - HyperHDR Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/overrides.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hyperk-installation-guide-wireless-led-controller" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="HyperHDR Wiki" class="md-header__button md-logo" aria-label="HyperHDR Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HyperHDR Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hyperk 🆕
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="HyperHDR Wiki" class="md-nav__button md-logo" aria-label="HyperHDR Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HyperHDR Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Getting-started.-Needed-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started. Needed components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#windows" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LibreELEC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LibreELEC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#debian-and-ubuntu-apt-repository" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux/Debian&Ubuntu repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#hyperhdr-custom-raspberry-pi-os-distribution" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux/RaspberryPi SD card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#linux-debianrpmarchlinux" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux CLI:Debian/RPM/ArchLinux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation#macos" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configurations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Quick-start.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LUT-calibration.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video source LUT calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P010-video-format.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P010 high quality video format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Automatic-tone-mapping.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatic tone mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Software-screen-capture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software screen capture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HyperSerial.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HyperSerialPico and others
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hyperk 🆕
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Hyperk.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hyperk 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-hardware-preparation-and-firmware-flashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 1: Hardware Preparation and Firmware Flashing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1: Hardware Preparation and Firmware Flashing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-supported-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Supported Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-web-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Web Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-flashing-raspberry-pi-pico-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Flashing Raspberry Pi Pico W
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-flashing-esp32--esp8266" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Flashing ESP32 / ESP8266
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-first-boot-and-wifi-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 2: First boot and WiFi configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2: First boot and WiFi configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-connecting-to-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Connecting to the Device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configuring-wifi-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Configuring WiFi Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-connection--fail-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Connection &amp; Fail-safe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-accessing-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Accessing the Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 3: Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3: Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Required Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-firmware-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Firmware Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-integration-with-hyperhdr-home-assistant-and-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4: Integration with HyperHDR, Home Assistant, and others
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4: Integration with HyperHDR, Home Assistant, and others">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-hyperhdr-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 HyperHDR Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-home-assistant--wled-api-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Home Assistant &amp; WLED API Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Raspberry-Pi-5-PWM.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi 5 GPIO PWM 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FTDI.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FTDI 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Audio-reactive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio-reactive lighting effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Zigbee2MQTT-lights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zigbee2MQTT lights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Home-Assistant-lights.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Assistant lights
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="JSON-API.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Instance-synchronization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instance synchronization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Hue-Entertainment-API-v2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hue gradient light strips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Infinite-color-engine.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infinite Color Engine 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ICE-RGBW.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RGB to RGBW with dithering (by iCE) 🆕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Compiling-HyperHDR.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiling HyperHDR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FAQ.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Level-Shifter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3V to 5V level shifter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Raspberry-Pi-OS-read-only-mode.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi OS read-only mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-hardware-preparation-and-firmware-flashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 1: Hardware Preparation and Firmware Flashing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1: Hardware Preparation and Firmware Flashing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-supported-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Supported Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-web-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Web Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-flashing-raspberry-pi-pico-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Flashing Raspberry Pi Pico W
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-flashing-esp32--esp8266" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Flashing ESP32 / ESP8266
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-first-boot-and-wifi-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 2: First boot and WiFi configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2: First boot and WiFi configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-connecting-to-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Connecting to the Device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configuring-wifi-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Configuring WiFi Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-connection--fail-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Connection &amp; Fail-safe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-accessing-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Accessing the Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 3: Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3: Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Required Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-firmware-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Firmware Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-integration-with-hyperhdr-home-assistant-and-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4: Integration with HyperHDR, Home Assistant, and others
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4: Integration with HyperHDR, Home Assistant, and others">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-hyperhdr-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 HyperHDR Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-home-assistant--wled-api-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Home Assistant &amp; WLED API Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hyperk-installation-guide-wireless-led-controller">Hyperk Installation Guide (Wireless LED Controller)<a class="headerlink" href="#hyperk-installation-guide-wireless-led-controller" title="Permanent link">&para;</a></h1>
+<h2 id="chapter-1-hardware-preparation-and-firmware-flashing">Chapter 1: Hardware Preparation and Firmware Flashing<a class="headerlink" href="#chapter-1-hardware-preparation-and-firmware-flashing" title="Permanent link">&para;</a></h2>
+<p>Before starting, ensure you have a compatible device and a stable USB connection. Hyperk supports various microcontrollers, but the flashing process depends on the specific hardware architecture you are using.</p>
+<h3 id="11-supported-devices">1.1 Supported Devices<a class="headerlink" href="#11-supported-devices" title="Permanent link">&para;</a></h3>
+<p>The following chips are currently supported:</p>
+<ul>
+<li><strong>Espressif Systems:</strong> ESP8266, ESP32, ESP32-S2, ESP32-S3, ESP32-C2, ESP32-C3, ESP32-C5, ESP32-C6, and WT32-ETH01.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>ESP32-C5 features dual-band  <strong>Wi&#8209;Fi&nbsp;6</strong> (2.4GHz and 5GHz), while ESP32-C6 supports <strong>Wi&#8209;Fi&nbsp;6</strong> on the 2.4GHz band only. For LED controlling applications, this standard provides crucial stability and responsiveness in congested wireless environments, rather than just raw throughput.</p>
+</div>
+<ul>
+<li><strong>Raspberry Pi Pico W:</strong> RP2040 and RP2350.<ul>
+<li><strong>Important:</strong> The <strong>"W"</strong> in "Pico W" is essential. Standard Pico boards without it do not have a Wi-Fi module and are not compatible.</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-web-installer">1.2 Web Installer<a class="headerlink" href="#12-web-installer" title="Permanent link">&para;</a></h3>
+<p>The easiest way to flash your device is via the official web installer:
+👉 <a href="https://hyperk.hyperhdr.org">https://hyperk.hyperhdr.org</a></p>
+<p><img width="512" alt="installer" src="https://github.com/user-attachments/assets/71188dd0-2d5b-4f07-b29c-7efeef20260c" /></p>
+<h3 id="13-flashing-raspberry-pi-pico-w">1.3 Flashing Raspberry Pi Pico W<a class="headerlink" href="#13-flashing-raspberry-pi-pico-w" title="Permanent link">&para;</a></h3>
+<p>For Pico boards, the process uses Mass Storage Mode rather than direct Web Serial flashing:</p>
+<ol>
+<li><strong>Enter DFU Mode:</strong><ul>
+<li>If your Pico has <strong>one button (BOOT)</strong>: Press and hold it while connecting the board to your USB port. Release the button once connected.</li>
+<li>If your Pico has <strong>two buttons (BOOT and RESET)</strong>: Connect it to the USB port. Press and hold both buttons, release RESET, then release BOOT.</li>
+</ul>
+</li>
+<li>The Pico board will appear on your computer as a removable drive.</li>
+<li><strong>Copy Firmware:</strong> Download the appropriate firmware file from the installer page and copy it directly onto the Pico drive. The device will automatically update and reboot.</li>
+</ol>
+<h3 id="14-flashing-esp32--esp8266">1.4 Flashing ESP32 / ESP8266<a class="headerlink" href="#14-flashing-esp32--esp8266" title="Permanent link">&para;</a></h3>
+<p>These chips can be flashed directly from the web installer if you are using a compatible browser. If the board is not detected automatically, you may need to enter the DFU mode manually.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You must use a browser that supports the <strong>Web Serial API</strong> (such as Google Chrome, Microsoft Edge, or Opera). <strong>Firefox is not supported</strong> as it does not allow web-based serial communication.</p>
+</div>
+<p>If you encounter issues, you can flash the <code>factory</code> firmware manually using <code>esptool</code>. If you are unsure of the button combination for your specific board to enter DFU, consult its documentation or use an AI (like Gemini) to find the correct combination. E.g. for <strong>ESP32-S2</strong> to enter DFU mode: Press and hold <strong>Rst + 0</strong>, release <strong>Rst</strong>, then release <strong>0</strong>.</p>
+<p>Example usage of <code>esptool</code> for <strong>ESP32-S2</strong> board in DFU mode:<br />
+<code>esptool.py write_flash 0x0 Hyperk_0.0.2-beta_esp32s2_factory.bin</code>.<br />
+All the settings will be erased and the bootloader will be restored.</p>
+<p><strong>Note:</strong> After the firmware is successfully flashed, a <strong>power cycle (unplug and replug the USB cable)</strong> is highly recommended.</p>
+<hr />
+<h2 id="chapter-2-first-boot-and-wifi-configuration">Chapter 2: First boot and WiFi configuration<a class="headerlink" href="#chapter-2-first-boot-and-wifi-configuration" title="Permanent link">&para;</a></h2>
+<p>Once the firmware has been successfully flashed, the device will boot into <strong>Access Point (AP) mode</strong>. In this state, it hosts its own WiFi network, allowing you to connect and configure your local network credentials.</p>
+<h3 id="21-connecting-to-the-device">2.1 Connecting to the Device<a class="headerlink" href="#21-connecting-to-the-device" title="Permanent link">&para;</a></h3>
+<ol>
+<li>On your mobile device, scan for available WiFi networks.</li>
+<li>Find and connect to the network named <strong>"Hyperk-Setup"</strong>.</li>
+<li>A notification should appear stating that a "Network login" is required. Tap it to automatically open the <strong>Hyperk Configuration Page</strong>.</li>
+</ol>
+<h3 id="22-configuring-wifi-settings">2.2 Configuring WiFi Settings<a class="headerlink" href="#22-configuring-wifi-settings" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navigate to the <strong>Settings</strong> tab.</li>
+<li>Under the WiFi section, you will see a list of nearby networks detected by the board. You can select your network from the list or manually enter your <strong>SSID</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, the ESP32-C5 is the only supported board with Wi&#8209;Fi&nbsp;6 on 2.4GHz and 5GHz. ESP32-C6 supports Wi&#8209;Fi&nbsp;6 on 2.4GHz and other boards support legacy Wi-Fi 4 (802.11 b/g/n) on 2.4GHz. The ESP8266 may struggle with modern routers: to ensure stability, disable <strong>Airtime Fairness</strong> and <strong>Band Steering</strong> (combined 2.4/5GHz) in your router settings. Using a dedicated 2.4GHz SSID is highly recommended.</p>
+</div>
+<ol>
+<li><strong>Optional:</strong> You may change the default <strong>mDNS address</strong> (hostname) to a custom name to make the device easier to identify on your network later.</li>
+<li>Finally, select your WiFi network, enter the password, and click <strong>Save Wifi &amp; Restart</strong>.</li>
+</ol>
+<h3 id="23-connection--fail-safe">2.3 Connection &amp; Fail-safe<a class="headerlink" href="#23-connection--fail-safe" title="Permanent link">&para;</a></h3>
+<ul>
+<li>After saving, the board will reboot and attempt to join your local WiFi.</li>
+<li><strong>Fail-safe:</strong> If the device cannot establish a connection within <strong>12 seconds</strong>, it will automatically revert to Access Point mode so you can re-configure the settings.</li>
+</ul>
+<h3 id="24-accessing-the-interface">2.4 Accessing the Interface<a class="headerlink" href="#24-accessing-the-interface" title="Permanent link">&para;</a></h3>
+<p>If the connection is successful, your device is now part of your home network. You can access the Hyperk interface from your PC or smartphone by:</p>
+<ul>
+<li>Navigating to <code>http://hyperk.local</code> in your browser (if the default name was kept and is unique).</li>
+<li>Checking your router's DHCP client list to find the specific <strong>IP address</strong> assigned to the board.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="1" src="https://github.com/user-attachments/assets/98038883-523b-4c42-a309-7030d14ef4fe" /></td>
+<td><img alt="2" src="https://github.com/user-attachments/assets/f4ef5299-76e4-4dcb-bc1b-af868167c133" /></td>
+<td><img alt="3" src="https://github.com/user-attachments/assets/7f848b07-cddf-4dd2-937b-711de5e76086" /></td>
+<td><img alt="4" src="https://github.com/user-attachments/assets/5d7e19ae-2854-47e2-ab6f-9a72d4bd6b5e" /></td>
+</tr>
+<tr>
+<td><img alt="5" src="https://github.com/user-attachments/assets/62a2ceb0-d735-497b-9174-406ea709f29c" /></td>
+<td><img alt="6" src="https://github.com/user-attachments/assets/aa86ee41-27ba-40a3-ae69-5efab68f36a4" /></td>
+<td><img alt="7" src="https://github.com/user-attachments/assets/429f65e1-45bd-48f8-a0ac-ce82587f9cd6" /></td>
+<td><img alt="8" src="https://github.com/user-attachments/assets/4ce24694-9f59-45ab-8840-9d64be475fd0" /></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="chapter-3-configuration">Chapter 3: Configuration<a class="headerlink" href="#chapter-3-configuration" title="Permanent link">&para;</a></h2>
+<p>Once the device is successfully connected to your WiFi and you have accessed the configuration page, it’s time to finalize the setup.</p>
+<h3 id="31-required-settings">3.1 Required Settings<a class="headerlink" href="#31-required-settings" title="Permanent link">&para;</a></h3>
+<p>To get your LEDs running, configure the following:</p>
+<ul>
+<li><strong>LED Type:</strong> Select the specific protocol/chipset of your LED strip.</li>
+<li><strong>LED Count:</strong> Enter the total number of LEDs in your setup.</li>
+<li><strong>GPIO Pin:</strong> Specify the data pin on the board where the LEDs are connected.</li>
+</ul>
+<p>Make sure you saved these settings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All other settings are optional and can be adjusted later based on your preferences.</p>
+</div>
+<h3 id="32-firmware-updates">3.2 Firmware Updates<a class="headerlink" href="#32-firmware-updates" title="Permanent link">&para;</a></h3>
+<p>Under the settings, you will find the <strong>OTA (Over-The-Air) Update</strong> feature. This allows you to effortlessly upgrade to the latest firmware versions wirelessly, without needing to reconnect the device to your computer.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="1" src="https://github.com/user-attachments/assets/994a2b1e-f6a7-4a9d-a034-3f62788a8051" /></td>
+<td><img alt="2" src="https://github.com/user-attachments/assets/bf0ae90c-f1f5-4142-a016-9bf0091fb118" /></td>
+<td><img alt="3" src="https://github.com/user-attachments/assets/c9ece6b1-a055-4d68-8e93-21a00d0cec54" /></td>
+<td><img alt="4" src="https://github.com/user-attachments/assets/83640dd1-c84b-49c1-820b-c4db11adc678" /></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="chapter-4-integration-with-hyperhdr-home-assistant-and-others">Chapter 4: Integration with HyperHDR, Home Assistant, and others<a class="headerlink" href="#chapter-4-integration-with-hyperhdr-home-assistant-and-others" title="Permanent link">&para;</a></h2>
+<p>With the device connected and the hardware configured, you can now integrate it with your smart home ecosystem or bias lighting software, such as <strong>HyperHDR</strong> or <strong>Home Assistant</strong>.</p>
+<h3 id="41-hyperhdr-configuration">4.1 HyperHDR Configuration<a class="headerlink" href="#41-hyperhdr-configuration" title="Permanent link">&para;</a></h3>
+<p>While you can use standard protocols like <code>DDP</code> or <code>rawudp</code> in HyperHDR, we highly recommend using the <strong>dedicated <code>hyperk</code> driver</strong>. </p>
+<ul>
+<li><strong>Auto-Discovery:</strong> The driver is designed to automatically locate your Hyperk device on the local network.</li>
+<li><strong>Advanced Features:</strong> Selecting this driver unlocks advanced RGBW calibration options and allows you to enable RGBW dithering.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>LED Count Mismatch: Ensure that the number of LEDs configured in HyperHDR <strong>exactly matches</strong> the LED count you specified in the Hyperk web interface. Discrepancies here will cause display issues.</p>
+</div>
+<h3 id="42-home-assistant--wled-api-compatibility">4.2 Home Assistant &amp; WLED API Compatibility<a class="headerlink" href="#42-home-assistant--wled-api-compatibility" title="Permanent link">&para;</a></h3>
+<p>Hyperk features a custom, lightweight implementation of the core <strong>WLED API</strong>. Because it speaks the same "language," any third-party software that supports WLED (like Home Assistant) should automatically discover and control your device without requiring additional plugins (as seen in the screenshot).</p>
+<p>In addition to basic JSON commands for toggling power and setting static colors, the device exposes several UDP services tailored for high-speed, real-time color streaming:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Service</th>
+<th style="text-align: left;">Port</th>
+<th style="text-align: left;">Protocol / Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Web GUI</strong></td>
+<td style="text-align: left;"><code>80</code></td>
+<td style="text-align: left;">Device configuration interface</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UDP DDP</strong></td>
+<td style="text-align: left;"><code>4048</code></td>
+<td style="text-align: left;">DDP stream listener</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UDP Raw RGB</strong></td>
+<td style="text-align: left;"><code>5568</code></td>
+<td style="text-align: left;">Raw color stream listener</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UDP RealTime</strong></td>
+<td style="text-align: left;"><code>21324</code></td>
+<td style="text-align: left;">WLED real-time UDP stream listener</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/user-attachments/assets/bf38fad9-e62a-414f-8a13-1b4e98c42df8"><img alt="1" src="https://github.com/user-attachments/assets/bf38fad9-e62a-414f-8a13-1b4e98c42df8" /></a></td>
+<td><a href="https://github.com/user-attachments/assets/ec5ac2db-dea9-461d-8031-348e80f62d12"><img alt="2a" src="https://github.com/user-attachments/assets/ec5ac2db-dea9-461d-8031-348e80f62d12" /></a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
