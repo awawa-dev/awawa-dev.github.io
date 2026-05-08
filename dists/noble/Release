@@ -1,0 +1,19 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: noble
+Date: Fri, 08 May 2026 13:22:55 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 0fc7a284c6011850ec894c47db333c8b 9551 main/binary-amd64/Packages
+ 1c8c8f1852a932fc06bdb23168f13cc0 4127 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 216da01c2b55c96f77b53b2b84ef7a484ce46829 9551 main/binary-amd64/Packages
+ fbba425b972d2a5e7425a64092e3fa18eb2ac58c 4127 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ 9a0186477901ad77e641e9a215e111a86607e056e3b15d78e23b7c9948e4de44 9551 main/binary-amd64/Packages
+ 153bc6edda1deab55fa692540ad4f0249a1792a0df021178bbb9c5230ef6dd58 4127 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
