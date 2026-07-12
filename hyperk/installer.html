@@ -257,19 +257,19 @@
                 {id: 'esp32c3', name: 'ESP32-C3'},
                 {id: 'esp32c5', name: 'ESP32-C5'},
                 {id: 'esp32c6', name: 'ESP32-C6'},
+                {id: 'esp8266', name: 'ESP8266'},
                 {id: 'esp32-eth01', name: 'WT32-ETH01'},
                 {id: 'esp32-GLEDOPTO_GL_C_616WL', name: 'GLEDOPTO_GL_C_616/618WL'},
                 {id: 'esp32-GLEDOPTO_GL_C_615WL', name: 'GLEDOPTO_GL_C_615WL'},
                 {id: 'esp32-DOMRAEM_WLE_ADM', name: 'DOMRAEM_WLE_ADM'},
-                {id: 'esp32-IOTORERO_ETHERNET', name: 'IOTORERO_ETHERNET'},
-                {id: 'esp8266', name: 'ESP8266'}
+                {id: 'esp32-IOTORERO_ETHERNET', name: 'IOTORERO_ETHERNET'}                
             ];
 
             targets.forEach(t => {                
                 const hasFile = assets.some(a => {
                     const n = a.name.toLowerCase();
                     if(t.id === 'esp8266') return n.includes('esp8266') && n.endsWith('.bin');
-                    return n.includes(t.id) && n.includes('factory') && n.endsWith('.bin');
+                    return n.includes(t.id.toLowerCase()) && n.includes('factory') && n.endsWith('.bin');
                 });
 
                 if(hasFile) {
@@ -340,12 +340,12 @@
                         'esp32c3': 'ESP32-C3',
                         'esp32c5': 'ESP32-C5',
                         'esp32c6': 'ESP32-C6',
+                        'esp8266': 'ESP8266',
                         'esp32-eth01': 'ESP32',
                         'esp32-GLEDOPTO_GL_C_616WL': 'ESP32',
                         'esp32-GLEDOPTO_GL_C_615WL': 'ESP32',
                         'esp32-DOMRAEM_WLE_ADM': 'ESP32',
-                        'esp32-IOTORERO_ETHERNET': 'ESP32',
-                        'esp8266': 'ESP8266'
+                        'esp32-IOTORERO_ETHERNET': 'ESP32'                        
                     };
 
                     const flashMode = (chip === 'esp8266') ? 'dout' : 'dio';
