@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: noble
+Date: Tue, 01 Sep 2026 00:47:45 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ 62fa72ee7082c1dab3a28766eb2b2d96 9539 main/binary-amd64/Packages
+ 27e06c8ab6308770d20238ec9f85ea21 4119 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 82d8637cbc1af6e4ee942dd2bef2dfea8adcc645 9539 main/binary-amd64/Packages
+ 56297a9d4501df662a82c32250ccff71ae686644 4119 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ 96b9e6b5234cc138260be0cf7003acef628ca2a9bae4e32d0fbc0067ba27426f 9539 main/binary-amd64/Packages
+ b7ad7507304c31f5871d873bd301dcc67fc581992fa7ff68e73d0e5d1d2b3352 4119 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE3fIyE6aNG8nXdUeREnYOCwtmh8cFAmqWILIACgkQEnYOCwtm
+h8cu2wv/ewOr7tg6XredU/Lx2zEdafxjIgM1KRQQuw8Yg6Juer+U8D+lJaIP77N6
+HbB6SzIEXQ4+7kIrSwfNZSIQ1g+4PaGN1JmklIqQ8eylPTZbFTdX005wohdroewa
+ftXB7Ep7q5mgzisTHhm5ef3Ui9jmrlCC938mwOLsbMTZNZXm3LlkrJWllf77WrSY
+L8AKa1bUJC2q2tNqF7V3pZxVE7A6QcfSzqmOeZ4/AkpLgjTwCjxAZ1WEaA5Ju+Rl
+GVKDT6SdK2yNH9JjSE1z4G2GGeOKfXmRixzLAtGkMK3AnSXpQiOZJh7kH5eOcyD+
+Ws5mvzJCny6FiOVUhilmXMWUAjOdw1cn5IYdLeAslVDM9tLPk5TECKyjEHwYnbTA
+l3nX3piIfxikqp2WrrNo+lMLDVJ9RH9PArxVko/kLs4kkQUISEon5AC9kxYQYw7W
+1OjrrKjooOVJHZMEY7GNisQCQYMbyIYRd26bHOQgxJwk2+NUGw5DjibN1LZtcI8J
+Yy0Tkezh
+=Pag3
+-----END PGP SIGNATURE-----

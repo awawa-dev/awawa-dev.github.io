@@ -1,0 +1,19 @@
+Origin: hyperhdr.eu
+Label: hyperhdr.eu
+Codename: resolute
+Date: Tue, 01 Sep 2026 00:47:41 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for HyperHDR
+MD5Sum:
+ f52cf4930499b6bd623c8619b2dfe1cc 9545 main/binary-amd64/Packages
+ cdd02665321cd6f17e03b55d936c7478 4125 main/binary-amd64/Packages.gz
+ 17358a411790934619a09ff8124aed76 116 main/binary-amd64/Release
+SHA1:
+ 2565c1846ba40ef969efb6c4ca8a0022b1db125b 9545 main/binary-amd64/Packages
+ 205861977ed7ffcf2d196ce654bf84a4cffd58c3 4125 main/binary-amd64/Packages.gz
+ 14d670e394ba0415ca1ec05491319cc3c6afb52e 116 main/binary-amd64/Release
+SHA256:
+ a1baf757a2329a7eaf15b46b70d5e32c16b85f661d5b8226e863f2d89a0923f6 9545 main/binary-amd64/Packages
+ 6a522b0d668479a1a6bb821ea4bbb5e961de52999c8f36ddb4c03096a25987ba 4125 main/binary-amd64/Packages.gz
+ 51e046c9a4f21e23e1de19f7d42af2fb154ea8fcddca7cfa616cf6a19066548b 116 main/binary-amd64/Release
